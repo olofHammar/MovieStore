@@ -13,6 +13,7 @@ function App() {
       Välkommen {name}!
       <Profile/>
     </div>
+    
   );
 }
 
