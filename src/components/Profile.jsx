@@ -1,9 +1,9 @@
 import React, { useState }from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { actions } from '../features/reduxTest';
+import { actions } from '../features/profile';
 
 
-const Counter = () => {
+const Profile = () => {
 
     const [name, setName] = useState('');
     const dispatch = useDispatch();
@@ -22,4 +22,4 @@ const Counter = () => {
     )
 }
 
-export default Counter
+export default Profile
