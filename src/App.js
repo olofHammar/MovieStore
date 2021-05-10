@@ -1,18 +1,34 @@
 import React from 'react';
 import './App.css';
 import { db } from './firebase';
-import Profile from './components/Profile';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Header from './components/Header';
+import Home from './components/Home';
+import Cart from './components/Cart';
 import { useSelector } from 'react-redux';
 
 function App() {
 
-  const name = useSelector(state => state.reduxTest.name);
+  const name = useSelector(state => state.profile.name);
 
   return (
-    <div>
-      Välkommen {name}!
-      <Profile/>
-    </div>
+   <Router>
+
+     <Header/>
+
+     <Switch>
+
+       <Route path="/cart">
+         <Cart/>
+       </Route>
+
+       <Route path="/">
+         <Home />
+       </Route>
+
+     </Switch>
+     
+   </Router>
   );
 }
 
