@@ -12,6 +12,7 @@ function App() {
   const name = useSelector(state => state.profile.name);
 
   return (
+
    <Router>
 
      <Header/>
