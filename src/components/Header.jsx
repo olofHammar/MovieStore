@@ -9,7 +9,7 @@ function Header() {
     return (
         <div className="headerContainer">
             <Link to="/" className="headerLink">
-             Welcome {name}
+             Welcome Axel {name}
             </Link>
             <Link to="/cart" className="headerLink">
              Cart
