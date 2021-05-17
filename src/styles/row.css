@@ -1,0 +1,35 @@
+.row h2 {
+  display: flex;
+  margin-left: 10px;
+}
+
+.row_movies {
+  display: flex;
+  min-height: 200px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+.row_movie {
+  width: 450px;
+  height: 300px;
+  margin-right: 10px;
+  border: 1px solid black;
+  border-radius: 1px;
+  align-items: center;
+  justify-content: center;
+}
+
+.row_movie h2 {
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.movie_poster {
+  height: 200px;
+  width: 150px;
+  object-fit: cover;
+}
