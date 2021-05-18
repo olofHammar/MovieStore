@@ -5,7 +5,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import Cart from './components/Cart';
+import Support from './components/Support'
 import { useSelector } from 'react-redux';
+import Navbar from './components/Navbar'
+
+
 
 function App() {
 
@@ -14,21 +18,13 @@ function App() {
   return (
 
    <Router>
-
-     <Header/>
-
-     <Switch>
-
-       <Route path="/cart">
-         <Cart/>
-       </Route>
-
-       <Route path="/">
-         <Home />
-       </Route>
-
-     </Switch>
-     
+    <Navbar />
+    <Switch>
+      <Route path="/" exact component={Home}/>
+      <Route path="/cart" exact component={Cart}/>
+      <Route path="/support" exact component={Support}/>
+    </Switch>
+    
    </Router>
   );
 }
