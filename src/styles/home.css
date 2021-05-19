@@ -1,6 +1,6 @@
 .homeContainer {
   display: flex;
   flex-direction: column;
-  padding: 20px;
-
+  width: 100%; 
+  background-color: black;
 }
