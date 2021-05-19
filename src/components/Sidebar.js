@@ -50,19 +50,23 @@ const Sidebar = () => {
 
   const showSidebar = () => setSidebar(!sidebar);
 
+  
   return (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
         <Nav>
           <NavIcon to='#'>
             <FaIcons.FaBars onClick={showSidebar} />
-            <FaIcons.FaCartPlus className="Cart_header"/>
+          </NavIcon>
+          <NavIcon to='/Cart'>
+          <FaIcons.FaCartPlus />
           </NavIcon>
         </Nav>
         <SidebarNav sidebar={sidebar}>
           <SidebarWrap>
             <NavIcon to='#'>
               <AiIcons.AiOutlineClose onClick={showSidebar} />
+              
             </NavIcon>
             {SidebarData.map((item, index) => {
               return <SubMenu item={item} key={index} />;

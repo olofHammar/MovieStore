@@ -15,22 +15,20 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 /*import Home from './Home';
 import { Reports, ReportsOne, ReportsTwo, ReportsThree } from './pages/Reports';*/
 
-const Container = styled.div`
-  width: 100%;
-`;
+
 
 
 function App() {
   return (
     <Router>
-      <Container>
+      
         <Sidebar />
           <Switch>
             <Route path='/Home' exact component={Home} />
            <Route path='/Cart' component={Cart} />
            <Route path='/Support' component={Support} />
          </Switch>
-      </Container>
+      
     </Router>
   );
 }
