@@ -2,6 +2,7 @@ import React from 'react'
 import styles from '../styles/cart.css';
 import { createReducer, createAction } from '@reduxjs/toolkit';
 
+
 const addToCart = createAction('add to cart')
 const removeFromCart = createAction('remove from cart')
 const increaseAmount = createAction('increase amount')
@@ -63,16 +64,6 @@ const reducer = createReducer(initialState, {
     )
 
 })
-
-
-
-
-
-
-
-
-
-
 
 function Cart() {
     return (
