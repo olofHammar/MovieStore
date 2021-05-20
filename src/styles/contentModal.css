@@ -49,12 +49,14 @@
   font-family: "Josefin Sans", sans-serif;
   font-size: 2em;
   margin: 0;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.123);
 }
 
 .movieRatings {
   display: inline;
   vertical-align: top;
   margin-top: 10px;
+  padding-bottom: 30px;
   height: 3%;
   width: 100%;
   border-bottom: 2px solid rgba(128, 128, 128, 0.123);
@@ -70,7 +72,7 @@
   width: 40px;
   height: 20px;
   margin-right: 5px;
-  margin-bottom: 5px;
+  padding-bottom: 3px;
 }
 
 .movieCastCrew {
@@ -92,7 +94,8 @@
 }
 
 .moviePlot {
-  min-height: 215px;
+  min-height: 235px;
+  margin-top: 15px;
   font-size: 1em;
   font-weight: 500;
   overflow: hidden;
@@ -100,6 +103,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 12;
   -webkit-box-orient: vertical;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.123);
 }
 
 .bottomRow {
