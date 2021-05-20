@@ -15,6 +15,7 @@ const Nav = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding-right: 20px;
 `;
 
 const NavIcon = styled(Link)`

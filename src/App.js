@@ -24,7 +24,8 @@ function App() {
       
         <Sidebar />
           <Switch>
-            <Route path='/Home' exact component={Home} />
+            <Route path='/' exact component={Home} />
+            <Route path='/Home'  component={Home} />
            <Route path='/Cart' component={Cart} />
            <Route path='/Support' component={Support} />
          </Switch>
