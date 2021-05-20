@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
-import image_one from '../background.png';
-import image_two from '../background_pop.jpg';
-import image_three from '../background_sign.jpg';
+import image_one from '../img/background.png';
+import image_two from '../img/background_pop.jpg';
+import image_three from '../img/background_sign.jpg';
 import '../styles/slideshow.css';
 
 const images = [   

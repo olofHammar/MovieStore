@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+#modalContainer {
+  display: flex;
+  flex-direction: column;
+  outline: none !important;
+  outline-offset: none !important;
+}
+
+.btnModalClose {
+  position: absolute;
+  top: 20;
+  right: 0;
+  height: 20px;
+  font-size: 2em;
+  font-weight: bolder;
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  margin-right: 5px;
+}
+
+.movieContainer {
+  display: flex;
+  height: 100%;
+  border-top-left-radius: 25px;
+}
+
+.modalImage {
+  display: flex;
+  width: 30%;
+  height: 80%;
+  object-fit: cover;
+  border-top-left-radius: 25px;
+}
+
+.infoContainer {
+  display: flex;
+  height: 100%;
+  width: 70%;
+  margin-top: 50px;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.movieTitle {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 2em;
+  margin: 0;
+}
+
+.movieRatings {
+  display: inline;
+  vertical-align: top;
+  margin-top: 10px;
+  height: 3%;
+  width: 100%;
+  border-bottom: 2px solid rgba(128, 128, 128, 0.123);
+}
+
+.movieRatings h5 {
+  display: inline;
+  margin-right: 20px;
+  vertical-align: top;
+}
+
+.imdbLogo {
+  width: 40px;
+  height: 20px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.movieCastCrew {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  vertical-align: top;
+}
+
+.movieCastCrew h4 {
+  margin: 0;
+  padding-top: 10px;
+  font-weight: 600;
+}
+
+.movieCastCrew span {
+  color: gray;
+  font-weight: 600;
+}
+
+.moviePlot {
+  min-height: 215px;
+  font-size: 1em;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 12;
+  -webkit-box-orient: vertical;
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+  height: 80px;
+}
+
+.btnModalCart {
+  width: 250px;
+  height: 60px;
+  position: relative;
+  text-align: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: orange;
+  color: white;
+  border: 2px solid rgb(230, 150, 2);
+  border-radius: 8px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.btnModalCart span {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 40;
+  padding: 10px;
+  bottom: 0;
+  right: 0;
+  color: orange;
+  background-color: white;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.btnModalCart:hover {
+  border: 2px solid rgb(230, 93, 2);
+}

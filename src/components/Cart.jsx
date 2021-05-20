@@ -5,7 +5,6 @@ import Slideshow from './Slideshow';
 function Cart() {
     return (
         <div>
-            <Slideshow />
             <h1 className="cartContainer"> This is Shoppingcart </h1>
         </div>
     )

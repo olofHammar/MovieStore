@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import api from '../api';
-import styles from '../styles/row.css';
+import '../styles/row.css';
 import ContentModal from './ContentModal';
 
 function Row({ title, category, rowId, id }) {
@@ -49,7 +49,7 @@ function Row({ title, category, rowId, id }) {
             left: containerScrollPosition + 700,
             behavior: 'smooth'
             })
-        } else if (title === "Documentary") {
+        } else if (title === "Documentaries") {
             let container = document.getElementById("documentary")
             let containerScrollPosition = document.getElementById("documentary").scrollLeft
             console.log(containerScrollPosition)
@@ -121,7 +121,7 @@ function Row({ title, category, rowId, id }) {
             left: containerScrollPosition - 700,
             behavior: 'smooth'
             })
-        } else if (title === "Documentary") {
+        } else if (title === "Documentaries") {
             let container = document.getElementById("documentary")
             let containerScrollPosition = document.getElementById("actionMovies").scrollLeft
             console.log(containerScrollPosition)
@@ -168,7 +168,7 @@ function Row({ title, category, rowId, id }) {
         <div className="row">
               <h1>{title}</h1>
               <div className="buttonContainer" >
-                <button style={{ display: showLeft ? "block" : "none" }} onClick={scrollLeft} className={rowId + " left-arrow"}>{left}</button>
+                <button style={{ display: showLeft ? "block" : "none" }} onClick={console.log(movies)} className={rowId + " left-arrow"}>{left}</button>
                 <button onClick={scrollRight} className={rowId + " right-arrow"}>{right}</button>
             </div>
               <div className="row_movies" id={id}>
@@ -179,6 +179,14 @@ function Row({ title, category, rowId, id }) {
                     title={movie.Title}
                     poster={movie.Poster}
                     plot={movie.Plot}
+                    cast={movie.Actors}
+                    director={movie.Director}
+                    genre={movie.Genre}
+                    rated={movie.Rated}
+                    metascore={movie.MetaScore}
+                    year={movie.Year}
+                    imdbRating={movie.imdbRating}
+                    price={19.99}
                    >
                    <img className="movie_poster" src={movie.Poster} />
                    </ContentModal>

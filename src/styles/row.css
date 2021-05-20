@@ -9,6 +9,8 @@
 .row h1 {
   display: flex;
   color: white;
+  margin-bottom: 5px;
+  margin-left: 15px;
 }
 
 .row_movies {
@@ -32,7 +34,7 @@
   align-items: center;
   justify-content: center;
   padding-bottom: 30px;
-  padding-top: 20px;
+  padding-top: 10px;
   transition: transform 450ms;
 }
 

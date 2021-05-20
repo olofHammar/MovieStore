@@ -22,7 +22,7 @@ function Home() {
              category={ movieLists.comedyMovies }
              rowId="rowThree"
              id="comedyMovies"/>
-         <Row title="Documentary" 
+         <Row title="Documentaries" 
              category={ movieLists.documentayMovies }
              rowId="rowFour"
              id="documentary"/>
