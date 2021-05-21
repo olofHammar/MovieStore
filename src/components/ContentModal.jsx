@@ -6,6 +6,8 @@ import '../styles/contentModal.css';
 import imdb_logo from '../img/imdb_logo.png';
 import Slide from '@material-ui/core/Slide';
 import { db } from '../firebase';
+import { useSelector } from 'react-redux';
+import { getUserId } from '../features/userSlice';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -38,6 +40,7 @@ metascore, year, imdbRating, price }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [movieAdded, setMovieAdded] = React.useState(false);
+  const userId = useSelector(getUserId);
 
   const handleOpen = () => {
     setOpen(true);
@@ -48,7 +51,7 @@ metascore, year, imdbRating, price }) {
   };
 
   const addToCart = () => {
-    const cartItem = db.collection('cartItems').doc(id)
+    const cartItem = db.collection('users').doc(userId).collection('cartItems').doc(id)
     cartItem.get()
     .then((doc)=> {
         if(doc.exists) {
