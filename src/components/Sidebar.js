@@ -6,6 +6,8 @@ import * as AiIcons from 'react-icons/ai';
 import { SidebarData } from './SidebarData';
 import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
+import { useSelector } from 'react-redux';
+import { getUserEmail } from '../features/userSlice';
 
 
 const Nav = styled.div`
@@ -25,6 +27,7 @@ const NavIcon = styled(Link)`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  text-decoration: none;
 `;
 
 const SidebarNav = styled.nav`
@@ -44,12 +47,16 @@ const SidebarWrap = styled.div`
   width: 100%;
 `;
 
-
+const EmailSign = styled.div`
+  color: white;   
+  font-size: 20px;
+  font-weight: 600;
+`;
 
 const Sidebar = ({handleLogout}) => {
   const [sidebar, setSidebar] = useState(false);
-
   const showSidebar = () => setSidebar(!sidebar);
+  const userEmail = useSelector(getUserEmail);
 
   
   return (
@@ -59,13 +66,19 @@ const Sidebar = ({handleLogout}) => {
           <NavIcon to='#'>
             <FaIcons.FaBars onClick={showSidebar} />
           </NavIcon>
+
+          <NavIcon onClick={handleLogout}>
+          <FaIcons.FaSignOutAlt />
+          </NavIcon>
+
+          <NavIcon onClick={handleLogout}>
+          <EmailSign>Welcome { userEmail }</EmailSign>
+          </NavIcon>
+          
           <NavIcon to='/Cart'>
           <FaIcons.FaCartPlus />
           </NavIcon>
 
-          <NavIcon onClick={handleLogout}>
-          <FaIcons.FaCartPlus />
-          </NavIcon>
         </Nav>
         <SidebarNav sidebar={sidebar}>
           <SidebarWrap>

@@ -5,9 +5,12 @@ import App from './App';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { rootReducer } from './features/rootReducer';
+import userReducer from './features/userSlice';
 
 const store = configureStore({
-  reducer: rootReducer
+  reducer: {
+    user: userReducer
+  }
 })
 
 ReactDOM.render(
