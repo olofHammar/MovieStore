@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import db from 'firebase';
-import Login from './Login';
-import Hero from './Hero';
+import Login from './components/Login';
+import Hero from './components/Hero';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
@@ -114,7 +114,7 @@ function App() {
 
      {user ?(
 
-<Hero handleLogout={handleLogout} />
+<Home handleLogout={handleLogout} />
 
      ) : (
 
@@ -136,18 +136,31 @@ function App() {
 
 
 
-     <Switch>
+{user ?(
+<Route path="/cart">
+<Cart/>
+</Route>
+ 
 
-       <Route path="/cart">
-         <Cart/>
-       </Route>
 
-       <Route path="/">
-         
-         <Home />
-    
-       </Route>
-     </Switch>
+     ) : (
+
+null
+
+     )}
+
+{user ?(
+
+<Route path="/">      
+<Home />
+</Route>
+
+     ) : (
+
+null
+
+     )}
+ 
    </Router>
   );
 }

@@ -9,10 +9,9 @@ function Header() {
     return (
         <div className="headerContainer">
             <Link to="/" className="headerLink">
-             Welcome Axel {name}
+             Movie Store {name}
             </Link>
-            <Link to="/cart" className="headerLink">
-             Cart
+            <Link to="cart" className="headerLink">
             </Link>
         </div>
     )
