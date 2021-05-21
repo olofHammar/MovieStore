@@ -168,7 +168,7 @@ function Row({ title, category, rowId, id }) {
         <div className="row">
               <h1>{title}</h1>
               <div className="buttonContainer" >
-                <button style={{ display: showLeft ? "block" : "none" }} onClick={console.log(movies)} className={rowId + " left-arrow"}>{left}</button>
+                <button style={{ display: showLeft ? "block" : "none" }} onClick={scrollLeft} className={rowId + " left-arrow"}>{left}</button>
                 <button onClick={scrollRight} className={rowId + " right-arrow"}>{right}</button>
             </div>
               <div className="row_movies" id={id}>
@@ -183,7 +183,7 @@ function Row({ title, category, rowId, id }) {
                     director={movie.Director}
                     genre={movie.Genre}
                     rated={movie.Rated}
-                    metascore={movie.MetaScore}
+                    metascore={movie.Metascore}
                     year={movie.Year}
                     imdbRating={movie.imdbRating}
                     price={19.99}
