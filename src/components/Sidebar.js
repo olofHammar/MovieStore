@@ -46,7 +46,7 @@ const SidebarWrap = styled.div`
 
 
 
-const Sidebar = () => {
+const Sidebar = ({handleLogout}) => {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
@@ -60,6 +60,10 @@ const Sidebar = () => {
             <FaIcons.FaBars onClick={showSidebar} />
           </NavIcon>
           <NavIcon to='/Cart'>
+          <FaIcons.FaCartPlus />
+          </NavIcon>
+
+          <NavIcon onClick={handleLogout}>
           <FaIcons.FaCartPlus />
           </NavIcon>
         </Nav>

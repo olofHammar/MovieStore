@@ -4,6 +4,8 @@ import Row from './Row';
 import movieLists from '../movieLists';
 import '../styles/home.css';
 import Slideshow from './Slideshow';
+import RowMarvel from './RowMarvel';
+import RowMystery from './RowMystery';
 
 function Home() {
 
@@ -30,6 +32,7 @@ function Home() {
              category={ movieLists.animatedMovies }
              rowId="rowFive"
              id="animatedMovies"/>
+        <RowMarvel />
         <Row title="Drama Movies" 
              category={ movieLists.dramaMovies }
              rowId="rowSix"
@@ -38,6 +41,7 @@ function Home() {
              category={ movieLists.familyMovies }
              rowId="rowSeven"
              id="familyMovies"/>
+        <RowMystery />
         <Row title="Horror Movies" 
              category={ movieLists.horrorMovies }
              rowId="rowEight"

@@ -5,6 +5,7 @@ import { Backdrop } from '@material-ui/core';
 import '../styles/contentModal.css';
 import imdb_logo from '../img/imdb_logo.png';
 import Slide from '@material-ui/core/Slide';
+import { db } from '../firebase';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -36,6 +37,7 @@ export default function ContentModal({ children, id, title, poster, plot, cast, 
 metascore, year, imdbRating, price }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [movieAdded, setMovieAdded] = React.useState(false);
 
   const handleOpen = () => {
     setOpen(true);
@@ -44,6 +46,37 @@ metascore, year, imdbRating, price }) {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const addToCart = () => {
+    const cartItem = db.collection('cartItems').doc(id)
+    cartItem.get()
+    .then((doc)=> {
+        if(doc.exists) {
+            cartItem.update({
+                quantity: doc.data().quantity + 1
+                
+            })
+            let btn = document.getElementById("btnCartAdd")
+            btn.innerText = "item added!";
+            setTimeout(function() {
+                btn.innerText = "Add to cart"
+            }, 1000);
+            
+        } else {
+                cartItem.set({
+                    title: title,
+                    poster: poster,
+                    price: price, 
+                    quantity: 1
+                })
+                let btn = document.getElementById("btnCartAdd")
+                btn.innerText = "item added!";
+                setTimeout(function() {
+                    btn.innerText = "Add to cart"
+                }, 1000);
+            }
+        })
+    }
 
   return (
     <>
@@ -79,6 +112,7 @@ metascore, year, imdbRating, price }) {
                 <h5>{year}</h5> 
                 <img src={ imdb_logo } alt="imdb" className="imdbLogo"/>
                 <h5>{imdbRating}</h5>
+                <h5>Metascore: {' '} { metascore }</h5>
                 <h5>Rated: {rated}</h5>
             </div>
             <div className="movieCastCrew">
@@ -87,7 +121,9 @@ metascore, year, imdbRating, price }) {
             </div>
             <h5 id="transition-modal-description" className="moviePlot">{plot}...</h5>
             <div className="bottomRow">
-            <button className="btnModalCart">Add to cart <span>${price}</span></button>
+            <button className="btnModalCart" onClick={addToCart}>
+                <div id="btnCartAdd">Add to cart</div> 
+                <div id="btnCartPrice">${price}</div></button>
             </div>
             </div>
             <button className="btnModalClose" onClick={handleClose}>X</button>
