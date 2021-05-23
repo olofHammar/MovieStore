@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
-import { reducer as profileReducer } from './profile';
+import userReducer from '../features/userSlice';
+
 
 const rootReducer = combineReducers({
-   profile : profileReducer
+      user: userReducer
 })
 
 

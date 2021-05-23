@@ -31,7 +31,7 @@
 .modalImage {
   display: flex;
   width: 30%;
-  height: 80%;
+  height: 81.5%;
   object-fit: cover;
   border-top-left-radius: 25px;
 }
@@ -46,8 +46,8 @@
 }
 
 .movieTitle {
-  font-family: "Josefin Sans", sans-serif;
   font-size: 2em;
+  letter-spacing: 1.42px;
   margin: 0;
   border-bottom: 2px solid rgba(128, 128, 128, 0.123);
 }
@@ -59,6 +59,7 @@
   padding-bottom: 30px;
   height: 3%;
   width: 100%;
+  letter-spacing: 1.42px;
   border-bottom: 2px solid rgba(128, 128, 128, 0.123);
 }
 
@@ -80,6 +81,7 @@
   flex-direction: column;
   margin-top: 20px;
   vertical-align: top;
+  letter-spacing: 1.42px;
 }
 
 .movieCastCrew h4 {
@@ -94,7 +96,7 @@
 }
 
 .moviePlot {
-  min-height: 235px;
+  min-height: 228px;
   margin-top: 15px;
   font-size: 1em;
   font-weight: 500;

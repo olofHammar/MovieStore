@@ -1,3 +1,5 @@
 .cartContainer {
   padding: 20px;
+  background: black;
+  height: 100vh;
 }

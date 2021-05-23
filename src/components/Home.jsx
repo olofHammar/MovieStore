@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import Profile from './Profile';
 import Row from './Row';
 import movieLists from '../movieLists';
 import '../styles/home.css';
-import Slideshow from './Slideshow';
+import ImgSlider from './ImgSlider';
 import RowMarvel from './RowMarvel';
 import RowMystery from './RowMystery';
 
@@ -11,7 +9,7 @@ function Home() {
 
     return (
         <div className="homeContainer">
-        <Slideshow />
+        <ImgSlider />
         <Row title="Top Movies" 
              category={ movieLists.topMovies }
              rowId="rowOne"
