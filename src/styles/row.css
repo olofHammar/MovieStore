@@ -9,6 +9,8 @@
 .row h1 {
   display: flex;
   color: white;
+  font-size: 1.8rem;
+  letter-spacing: 1.42px;
   margin-bottom: 5px;
   margin-left: 15px;
 }

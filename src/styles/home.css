@@ -3,4 +3,5 @@
   flex-direction: column;
   width: 100%; 
   background-color: black;
+  overflow-x: hidden;
 }

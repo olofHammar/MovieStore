@@ -8,6 +8,7 @@ import Slide from '@material-ui/core/Slide';
 import { db } from '../firebase';
 import { useSelector } from 'react-redux';
 import { getUserId } from '../features/userSlice';
+import LoginModal from './LoginModal';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -44,6 +45,7 @@ metascore, year, imdbRating, price }) {
 
   const handleOpen = () => {
     setOpen(true);
+    
   };
 
   const handleClose = () => {
@@ -124,9 +126,19 @@ metascore, year, imdbRating, price }) {
             </div>
             <h5 id="transition-modal-description" className="moviePlot">{plot}...</h5>
             <div className="bottomRow">
-            <button className="btnModalCart" onClick={addToCart}>
-                <div id="btnCartAdd">Add to cart</div> 
-                <div id="btnCartPrice">${price}</div></button>
+              {
+                !userId ? (
+                  <LoginModal>
+                  <button className="btnModalCart">
+                      <div id="btnCartAdd">Add to cart</div> 
+                      <div id="btnCartPrice">${price}</div></button>
+                      </LoginModal>
+                ) : (
+                  <button className="btnModalCart" onClick={addToCart}>
+                      <div id="btnCartAdd">Add to cart</div> 
+                      <div id="btnCartPrice">${price}</div></button>
+                )
+              }
             </div>
             </div>
             <button className="btnModalClose" onClick={handleClose}>X</button>
