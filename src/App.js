@@ -4,7 +4,6 @@ import { auth } from './firebase';
 import Home from './components/Home';
 import Cart from './components/Cart';
 import Support from './components/Support';
-import TopNav from './components/TopNav';
 import Collections from './components/Collections';
 import './App.css';
 import Sidebar from './components/Sidebar';
@@ -27,7 +26,6 @@ function App() {
 
   return (
     <Router>
-      <TopNav />
         <Sidebar handleLogout={handleLogout} />
           <Switch>
 
