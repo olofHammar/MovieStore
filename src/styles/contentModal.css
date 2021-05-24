@@ -31,7 +31,7 @@
 .modalImage {
   display: flex;
   width: 30%;
-  height: 81.5%;
+  height: 80.5%;
   object-fit: cover;
   border-top-left-radius: 25px;
 }

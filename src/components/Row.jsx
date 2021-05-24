@@ -188,7 +188,7 @@ function Row({ title, category, rowId, id }) {
                     imdbRating={movie.imdbRating}
                     price={19.99}
                    >
-                   <img className="movie_poster" src={movie.Poster} />
+                   <img className="movie_poster" src={movie.Poster} key={movie.imdbID} />
                    </ContentModal>
                 </div>
             ))}

@@ -2,14 +2,52 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
+import { useSelector } from 'react-redux';
+import { getUserEmail, getUserId } from '../features/userSlice';
+import LoginModal from '../components/LoginModal';
 import * as AiIcons from 'react-icons/ai';
 import { SidebarData } from './SidebarData';
 import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
-import { useSelector } from 'react-redux';
-import { getUserEmail, getUserId } from '../features/userSlice';
-import LoginModal from './LoginModal';
 import image from '../img/m_logo.png';
+
+const TopNavContainer = styled.div`
+  background: black;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-right 20px;
+  padding-left: 10px;
+`;
+
+const CartIcon = styled(Link)`
+  font-size: 1.2rem;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+
+  p {
+      padding-left: 10px;
+      font-weight: 500;
+  }
+`;
+
+const UserContainer = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 15px;
+  letter-spacing: 1.42px;
+  span {
+      font-weight: bold;
+      padding-right: 5px;
+  }
+`;
 
 const Nav = styled.div`
   background: linear-gradient(to top, black, #15171c);
@@ -55,7 +93,6 @@ const NavIconSignInText = styled.p`
   display: flex;
   margin-left: 13px;
 `;
-
 
 const NavIconSignOut = styled(Link)`
   margin-top: 325px;
@@ -104,30 +141,23 @@ const SidebarWrap = styled.div`
   background: linear-gradient(65deg, black, #15171c);
 `;
 
-const LogoImg = styled.img`
-    height: 70%;
+const LogoImage = styled.img`
+  height: 50px;
+  padding-top: 15px;
 `
 
-const UserContainer = styled.div`
-  color: white;
-`;
+function Sidebar({ handleLogout}) {
+    const [sidebar, setSidebar] = useState(false);
+    const showSidebar = () => setSidebar(!sidebar);
+    const userId = useSelector(getUserId);
+    const userEmail = useSelector(getUserEmail);
 
-
-const Sidebar = ({handleLogout}) => {
-  const [sidebar, setSidebar] = useState(false);
-  const showSidebar = () => setSidebar(!sidebar);
-  const userEmail = useSelector(getUserEmail);
-  const userId = useSelector(getUserId);
-
-  
-  return (
-    <>
-      <IconContext.Provider value={{ color: '#fff' }}>
-        <Nav>
+    return (
+        <TopNavContainer>
+               <IconContext.Provider value={{ color: '#fff' }}>
           <NavIcon to='#'>
             <FaIcons.FaBars onClick={showSidebar} />
           </NavIcon>
-        </Nav>
 
         <SidebarNav sidebar={sidebar}>
 
@@ -140,6 +170,7 @@ const Sidebar = ({handleLogout}) => {
               {SidebarData.map((item, index) => {
                 return <SubMenu item={item} key={index}/>;
               })}
+
               {
               userId ? (
                 
@@ -168,8 +199,25 @@ const Sidebar = ({handleLogout}) => {
         </SidebarNav>
         
       </IconContext.Provider>
-    </>
-  );
-};
+            {
+            userId ? (
+                <UserContainer>
+                    <span> SIGNED IN AS: </span> { userEmail }
+                </UserContainer>
+            ) : (
+              <UserContainer>
+                  <LoginModal>
+                  <span> SIGN IN TO START SHOPPING </span> 
+                  </LoginModal>
+              </UserContainer>
+            )
+          }
+            <CartIcon to='/Cart'>
+                <FaIcons.FaCartPlus />
+                <p>12</p>
+            </CartIcon>
+        </TopNavContainer>
+    )
+}; 
 
 export default Sidebar;
