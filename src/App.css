@@ -18,3 +18,21 @@
   justify-content: center;
   font-size: 3rem;
 }
+
+.input{
+  display: flex;
+  border: 5px black;
+  align-items: center;
+  justify-content: center;
+   
+  width: 200px;
+  font-size: large;
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.row_movies{
+  background-color: black;
+  height: 100%;
+}

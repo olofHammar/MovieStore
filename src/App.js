@@ -10,7 +10,9 @@ import Sidebar from './components/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useDispatch} from 'react-redux';
 import { setUserLogOutState } from './features/userSlice'; 
-
+import CardList from './components/SearchElement/CardList'
+import SearchBar from './components/SearchElement/SearchBar'
+import SearchPage from './components/SearchPage';
 
 function App() {
 
@@ -25,6 +27,7 @@ function App() {
   };
 
   return (
+    
     <Router>
         <Sidebar handleLogout={handleLogout} />
           <Switch>
@@ -39,6 +42,10 @@ function App() {
 
             <Route path="/Home">
               <Home/>
+            </Route>
+
+            <Route path="/SearchPage">
+              <SearchPage/>
             </Route>
             
             <Route path='/Support'>

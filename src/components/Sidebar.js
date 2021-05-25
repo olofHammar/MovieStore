@@ -10,6 +10,9 @@ import { SidebarData } from './SidebarData';
 import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
 import image from '../img/m_logo.png';
+import CardList from '../components/SearchElement/CardList'
+import SearchBar from '../components/SearchElement/SearchBar'
+
 
 const TopNavContainer = styled.div`
   background: black;
@@ -159,6 +162,8 @@ function Sidebar({ handleLogout}) {
             <FaIcons.FaBars onClick={showSidebar} />
           </NavIcon>
 
+          
+
         <SidebarNav sidebar={sidebar}>
 
           <SidebarWrap>
@@ -197,7 +202,9 @@ function Sidebar({ handleLogout}) {
           </SidebarWrap>
 
         </SidebarNav>
+
         
+
       </IconContext.Provider>
             {
             userId ? (

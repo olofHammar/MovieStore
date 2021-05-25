@@ -25,8 +25,6 @@ function CardList({ results }) {
           imdbRating={movie.imdbRating}
           price={19.99}>
 
-<img className="movie_poster" src={movie.Poster} key={movie.imdbID} />
-
           <Card key={movie.imdbID} movie={movie} />
 
         </ContentModal>

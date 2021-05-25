@@ -46,8 +46,8 @@ export const SidebarData  = [
     icon: <FaIcons.FaCartPlus />
   },
   {
-    title: 'Team',
-    path: '/team',
+    title: 'Search Page',
+    path: '/SearchPage',
     icon: <IoIcons.IoMdPeople />
   },
   {
