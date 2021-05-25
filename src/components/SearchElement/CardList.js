@@ -1,17 +1,18 @@
-import React from "react";
-import ContentModal from "../LoginModal";
-import Card from "./Card";
+import React from "react"
+import ContentModal from "../ContentModal"
+import Card from "./Card"
 
 function CardList({ results }) {
-  let data = [];
+  let data = []
   if (results.data) {
-    data = results.data.Search || [];
+    data = results.data.Search || []
   }
-  console.log(data);
+
   return (
     <div className="result">
       {data.map((movie) => (
         <ContentModal
+          key={movie.imdbID}
           id={movie.imdbID}
           title={movie.Title}
           poster={movie.Poster}
@@ -23,14 +24,13 @@ function CardList({ results }) {
           metascore={movie.Metascore}
           year={movie.Year}
           imdbRating={movie.imdbRating}
-          price={19.99}>
-
-          <Card key={movie.imdbID} movie={movie} />
-
+          price={19.99}
+        >
+          <Card movie={movie} />
         </ContentModal>
       ))}
     </div>
-  );
+  )
 }
 
 export default CardList;
