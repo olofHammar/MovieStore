@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
 import userReducer from '../features/userSlice';
-import titleReducer from '../features/titleSlice';
+import myListReducer from '../features/myListSlice';
 
 
 const rootReducer = combineReducers({
       user: userReducer,
-      title: titleReducer
+      myList: myListReducer
 })
 
 
-export { rootReducer};
+export { rootReducer };

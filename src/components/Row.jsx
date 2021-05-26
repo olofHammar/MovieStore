@@ -20,7 +20,6 @@ function Row({ title, category, rowId, id }) {
             }
             }));     
             fetchMovies.then(data=> setMovies(data));
-            console.log(movies);
     }, []);
 
     const scrollRight = (e) => {
