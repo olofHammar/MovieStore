@@ -9,8 +9,14 @@ import MyList from './components/MyList';
 import './App.css';
 import Sidebar from './components/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import CardList from './components/SearchElement/CardList'
+import SearchBar from './components/SearchElement/SearchBar'
+import SearchPage from './components/SearchPage';
+
 import { useDispatch, useSelector} from 'react-redux';
 import { setCurrentUser, setUserLogOutState, getUserId } from './features/userSlice'; 
+
 
 
 function App() {
@@ -68,6 +74,7 @@ function App() {
   };
 
   return (
+    
     <Router>
         <Sidebar handleLogout={handleLogout} cartItems={cartItems} />
           <Switch>
@@ -82,6 +89,10 @@ function App() {
 
             <Route path="/Home">
               <Home/>
+            </Route>
+
+            <Route path="/SearchPage">
+              <SearchPage/>
             </Route>
             
             <Route path='/Support'>
