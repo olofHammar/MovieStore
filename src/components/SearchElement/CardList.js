@@ -9,7 +9,7 @@ function CardList({ results }) {
   }
 
   return (
-    <div className="result">
+    <div className="row">
       {data.map((movie) => (
         <ContentModal
           key={movie.imdbID}

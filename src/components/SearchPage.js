@@ -16,19 +16,15 @@ function SearchPage() {
     };
   
     return (
-      <div className="App">
-        <div className="container searchApp">
+      <div className="homeContainer">
+        <div className="">
           <SearchBar onSearch={onSearch} />
-          <div className="row_movies">
+            <div className="row_movies">
 
-          <CardList results={results} 
+              <CardList results={results} 
                 
-             
-         
             />
-          
           </div>
-          
         </div>
       </div>
     );

@@ -4,7 +4,7 @@ export default function Card({ movie }) {
   
   return (
     <div class="resultCard">
-      <figure className="image is-48x48">
+      <figure className="homeContainer">
         <img
           src={movie.Poster}
           alt= {movie.Title}
