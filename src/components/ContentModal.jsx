@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Backdrop } from '@material-ui/core';
@@ -9,6 +9,7 @@ import { db } from '../firebase';
 import { useSelector } from 'react-redux';
 import { getUserId } from '../features/userSlice';
 import LoginModal from './LoginModal';
+import * as FaIcons from 'react-icons/fa';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -40,7 +41,7 @@ export default function ContentModal({ children, id, title, poster, plot, cast, 
 metascore, year, imdbRating, price }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const [movieAdded, setMovieAdded] = React.useState(false);
+  const [myList, setMyList] = useState(false);
   const userId = useSelector(getUserId);
 
   const handleOpen = () => {
@@ -51,6 +52,35 @@ metascore, year, imdbRating, price }) {
   const handleClose = () => {
     setOpen(false);
   };
+
+  useEffect(() => {
+    if (userId === null) { return }
+    let movie = db.collection('users').doc(userId).collection('myList').doc(id)
+    movie.get()
+    .then((doc) => {
+      if(doc.exists) {
+        setMyList(true);
+      } else {
+        setMyList(false);
+      }
+    })
+  }, [open]);
+
+  const handleMyList = () => {
+    if (userId === null) { return }
+    setMyList(!myList);
+    if(!myList) {
+      let movie = db.collection('users').doc(userId).collection('myList').doc(id)
+      movie.set({
+        id: id,
+        url: `http://www.omdbapi.com/?i=${id}&plot=full&apikey=38795606`
+      })
+    } else {
+      if (userId === null) { return }
+      let movie = db.collection('users').doc(userId).collection('myList').doc(id)
+      movie.delete()
+    }
+  }
 
   const addToCart = () => {
     const cartItem = db.collection('users').doc(userId).collection('cartItems').doc(id)
@@ -126,24 +156,35 @@ metascore, year, imdbRating, price }) {
             </div>
             <h5 id="transition-modal-description" className="moviePlot">{plot}...</h5>
             <div className="bottomRow">
-              {
-                !userId ? (
-                  <LoginModal>
-                  <button className="btnModalCart">
-                      <div id="btnCartAdd">Add to cart</div> 
-                      <div id="btnCartPrice">${price}</div></button>
-                      </LoginModal>
-                ) : (
-                  <button className="btnModalCart" onClick={addToCart}>
-                      <div id="btnCartAdd">Add to cart</div> 
-                      <div id="btnCartPrice">${price}</div></button>
-                )
-              }
-            </div>
-            </div>
-            <button className="btnModalClose" onClick={handleClose}>X</button>
+              <div className="leftSide">
+                {
+                  !userId ? (
+                    <LoginModal>
+                    <button className="btnModalCart">
+                        <div id="btnCartAdd">Add to cart</div> 
+                        <div id="btnCartPrice">${price}</div></button>
+                        </LoginModal>
+                  ) : (
+                    <button className="btnModalCart" onClick={addToCart}>
+                        <div id="btnCartAdd">Add to cart</div> 
+                        <div id="btnCartPrice">${price}</div></button>
+                  )
+                }
+              </div>
+              <div className="rightSide">
+                {
+                  myList ? (
+                    <span className="spanCheck"><FaIcons.FaCheckCircle id="checkIcon" onClick={handleMyList} /></span>
+                  ) : (
+                      <span className="spanPlus"><FaIcons.FaPlusCircle id="plusIcon" onClick={handleMyList}/></span>
+                  )
+                }
+              </div>
             </div>
           </div>
+        <button className="btnModalClose" onClick={handleClose}>X</button>
+      </div>
+    </div>
         </Slide>
       </Modal>
     </>

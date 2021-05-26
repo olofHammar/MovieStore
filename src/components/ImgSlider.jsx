@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 import jackson from '../img/slider_jackson.jpg';
 import musical from '../img/slider_musical.png';
 import stand_up from '../img/slider_stand_up.png';
-import { setTitle } from '../features/titleSlice'; 
 import { useDispatch } from 'react-redux';
 import BottomBar from '../components/BottomBar';
 
@@ -29,41 +28,25 @@ function ImgSlider() {
         <CarouselContainer>
         <Carousel {...settings }>
             <Wrap>
-                <Link to='/collections' onClick={() => {
-                    dispatch(setTitle({
-                        title: 'batman'
-                    }))
-                }}>
+                <Link to='collections/batman'>
                     <img src={ batman }/>
                 </Link>
             </Wrap>
 
             <Wrap >
-                <Link to='collections' onClick={() => {
-                    dispatch(setTitle({
-                        title: 'jackson'
-                    }))
-                }}>
+                <Link to='collections/peter_jackson'>
                     <img src={ jackson }/>
                 </Link>
             </Wrap>
 
             <Wrap>
-                <Link to='collections' onClick={() => {
-                    dispatch(setTitle({
-                        title: 'musical'
-                    }))
-                }}>
+                <Link to='collections/musicals'>
                     <img src={ musical }/>
                 </Link>
             </Wrap>
 
             <Wrap>
-                <Link to='collections' onClick={() => {
-                    dispatch(setTitle({
-                        title: 'stand_up'
-                    }))
-                }}>
+                <Link to='collections/stand_up'>
                     <img src={ stand_up }/>
                 </Link>
             </Wrap>

@@ -15,18 +15,21 @@ import SearchBar from '../components/SearchElement/SearchBar'
 
 
 const TopNavContainer = styled.div`
-  background: black;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, black, #15171c);
   height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   padding-right 20px;
   padding-left: 10px;
+  z-index: 10;
 `;
 
-const CartIcon = styled(Link)`
-  font-size: 1.2rem;
+const CartIconContainer = styled(Link)`
+  font-size: 1.7rem;
   height: 80px;
   display: flex;
   justify-content: flex-start;
@@ -36,33 +39,8 @@ const CartIcon = styled(Link)`
 
   p {
       padding-left: 10px;
-      font-weight: 500;
+      color: orange;
   }
-`;
-
-const UserContainer = styled.div`
-  display: flex;
-  align-items: center;
-  padding: 0 10px;
-  font-size: 15px;
-  letter-spacing: 1.42px;
-  span {
-      font-weight: bold;
-      padding-right: 5px;
-  }
-`;
-
-const Nav = styled.div`
-  background: linear-gradient(to top, black, #15171c);
-  height: 50px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding-right: 20px;
-  border-top: 2px solid #15171c;
 `;
 
 const NavIcon = styled(Link)`
@@ -144,16 +122,35 @@ const SidebarWrap = styled.div`
   background: linear-gradient(65deg, black, #15171c);
 `;
 
-const LogoImage = styled.img`
-  height: 50px;
-  padding-top: 15px;
-`
+const InfoContainer = styled.div`
+  letter-spacing: 1.43px;
+  margin-bottom: 15px;
+  margin-left: 5px;
+    span {
+      font-size: 0.8rem;
+    }
+    h4 {
+      font-size: 1rem;
+      padding-bottom: 2px;
+    }
 
-function Sidebar({ handleLogout}) {
+`;
+
+function Sidebar({ handleLogout, cartItems }) {
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
     const userId = useSelector(getUserId);
     const userEmail = useSelector(getUserEmail);
+
+    const getCount = () => {
+      let count = 0; 
+
+      cartItems.forEach((item) => {
+          //console.log(item.data.quantity);
+          count += item.data.quantity;
+      });
+      return count;
+  }
 
     return (
         <TopNavContainer>
@@ -173,7 +170,7 @@ function Sidebar({ handleLogout}) {
             </NavIcon>
 
               {SidebarData.map((item, index) => {
-                return <SubMenu item={item} key={index}/>;
+                return <SubMenu item={item} key={index} showSidebar={showSidebar}/>;
               })}
 
               {
@@ -206,23 +203,32 @@ function Sidebar({ handleLogout}) {
         
 
       </IconContext.Provider>
-            {
-            userId ? (
-                <UserContainer>
-                    <span> SIGNED IN AS: </span> { userEmail }
-                </UserContainer>
-            ) : (
-              <UserContainer>
+              {
+              userId ? (
+                <CartIconContainer>
+                  <FaIcons.FaUser />
+                  <InfoContainer>
+                    <span>ACCOUNT</span>
+                    <h4>{ userEmail }</h4>
+                  </InfoContainer>
+              </CartIconContainer>
+              ) : (
+                <CartIconContainer>
+                  <FaIcons.FaUser />
                   <LoginModal>
-                  <span> SIGN IN TO START SHOPPING </span> 
+                    <InfoContainer>
+                      <span>ACCOUNT</span>
+                      <h4>Sign in here</h4>
+                    </InfoContainer>
                   </LoginModal>
-              </UserContainer>
-            )
-          }
-            <CartIcon to='/Cart'>
-                <FaIcons.FaCartPlus />
-                <p>12</p>
-            </CartIcon>
+              </CartIconContainer>
+              )
+            }
+
+            <CartIconContainer to='/Cart'>
+                  <FaIcons.FaCartPlus />
+                <p>{getCount()}</p>
+            </CartIconContainer>
         </TopNavContainer>
     )
 }; 
