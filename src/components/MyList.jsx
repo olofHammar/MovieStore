@@ -10,6 +10,7 @@ function MyList( { myList }) {
 
 const [movies, setMovies] = useState([]);
 const userId = useSelector(getUserId);
+const key = "My List";
 
 useEffect(() => {
   let fetchMovies = Promise.all([...myList].map(async m =>{
@@ -50,6 +51,7 @@ useEffect(() => {
                        year={movie.Year}
                        imdbRating={movie.imdbRating}
                        price={19.99}
+                       mylist={key}
                      >
                      <img className="movie_poster" src={movie.Poster} key={movie.imdbID} />
                      </ContentModal>
@@ -58,8 +60,8 @@ useEffect(() => {
              </div>
              </>
             ) : (
-              <div className="titleContainer">
-              <h4>Sign in to use access this feature</h4>
+              <div className="signInContainer">
+              <h4>Sign in to access this feature</h4>
               </div>
             )
           }
