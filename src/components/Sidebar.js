@@ -9,10 +9,6 @@ import * as AiIcons from 'react-icons/ai';
 import { SidebarData } from './SidebarData';
 import SubMenu from './SubMenu';
 import { IconContext } from 'react-icons/lib';
-import image from '../img/m_logo.png';
-import CardList from '../components/SearchElement/CardList'
-import SearchBar from '../components/SearchElement/SearchBar'
-
 
 const TopNavContainer = styled.div`
   position: sticky;

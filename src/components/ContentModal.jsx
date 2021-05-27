@@ -9,7 +9,8 @@ import { db } from '../firebase';
 import { useSelector } from 'react-redux';
 import { getUserId } from '../features/userSlice';
 import LoginModal from './LoginModal';
-import * as FaIcons from 'react-icons/fa';
+import check from '../img/v_white.png';
+import plus from '../img/add_white.png';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -38,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ContentModal({ children, id, title, poster, plot, cast, director, genre, rated, 
-metascore, year, imdbRating, price }) {
+metascore, year, imdbRating, price, mylist }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [myList, setMyList] = useState(false);
@@ -64,6 +65,7 @@ metascore, year, imdbRating, price }) {
         setMyList(false);
       }
     })
+
   }, [open]);
 
   const handleMyList = () => {
@@ -79,6 +81,11 @@ metascore, year, imdbRating, price }) {
       if (userId === null) { return }
       let movie = db.collection('users').doc(userId).collection('myList').doc(id)
       movie.delete()
+      console.log(mylist);
+      console.log(title)
+      if(mylist === "My List") {
+        handleClose();
+      }      
     }
   }
 
@@ -165,21 +172,40 @@ metascore, year, imdbRating, price }) {
                         <div id="btnCartPrice">${price}</div></button>
                         </LoginModal>
                   ) : (
+                    <div className="buttonsContainer">
                     <button className="btnModalCart" onClick={addToCart}>
                         <div id="btnCartAdd">Add to cart</div> 
                         <div id="btnCartPrice">${price}</div></button>
+
+                    <button className="btnModalTrailer">
+                      <div id="btnCartAdd">Trailer</div> 
+                    </button>
+
+                    <button className="btnModalTrailer">
+                      <div id="btnCartAdd">Reviews</div> 
+                    </button>
+
+                    </div>
                   )
                 }
               </div>
-              <div className="rightSide">
-                {
-                  myList ? (
-                    <span className="spanCheck"><FaIcons.FaCheckCircle id="checkIcon" onClick={handleMyList} /></span>
-                  ) : (
-                      <span className="spanPlus"><FaIcons.FaPlusCircle id="plusIcon" onClick={handleMyList}/></span>
-                  )
-                }
-              </div>
+              {
+                userId ? (
+                  <div className="rightSide">
+                  {
+                    myList ? (
+                      <span className="spanCheck"><img src={ check } id="checkIcon" onClick={handleMyList} /></span>
+                    ) : (
+                      <span className="spanPlus"><img src={ plus } id="plusIcon" onClick={handleMyList}/></span>
+                    )
+                  }
+                </div>
+                ) : (
+                  <>
+                  </>
+                )
+
+              }
             </div>
           </div>
         <button className="btnModalClose" onClick={handleClose}>X</button>
