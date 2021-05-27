@@ -9,6 +9,8 @@ import { db } from '../firebase';
 import { useSelector } from 'react-redux';
 import { getUserId } from '../features/userSlice';
 import LoginModal from './LoginModal';
+import TrailerModal from './TrailerModal';
+import ReviewModal from './ReviewModal';
 import check from '../img/v_white.png';
 import plus from '../img/add_white.png';
 
@@ -177,13 +179,15 @@ metascore, year, imdbRating, price, mylist }) {
                         <div id="btnCartAdd">Add to cart</div> 
                         <div id="btnCartPrice">${price}</div></button>
 
-                    <button className="btnModalTrailer">
-                      <div id="btnCartAdd">Trailer</div> 
-                    </button>
+                    <TrailerModal
+                      videoId={title}
+                    >
+                      <button className="btnModalTrailer">Trailer</button>
+                    </TrailerModal>
 
-                    <button className="btnModalTrailer">
-                      <div id="btnCartAdd">Reviews</div> 
-                    </button>
+                    <ReviewModal>
+                      <button className="btnModalReviews">Reviews</button>
+                    </ReviewModal>
 
                     </div>
                   )
