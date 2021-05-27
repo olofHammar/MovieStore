@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ContentModal({ children }) {
+export default function LoginModal({ children }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [email, setEmail] = useState("");

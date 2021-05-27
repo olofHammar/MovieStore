@@ -42,7 +42,7 @@ export default function Card({ movie }) {
     }
 
   return (
-    <div class="cardContainer">
+    <div className="cardContainer">
         <img className="cardPoster"
           src={movie.Poster}
           alt= {movie.Title}
