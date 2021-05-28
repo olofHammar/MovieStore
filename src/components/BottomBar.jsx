@@ -4,7 +4,7 @@ import image from '../img/m_logo.png';
 import { Link } from 'react-router-dom';
 
 const Nav = styled.div`
-  background: linear-gradient(to top, black, #15171c);
+  background: linear-gradient(to top, rgb(11, 11, 17), #15171c);
   height: 80px;
   padding-bottom: 10px;
   padding-top: 10px;

@@ -14,7 +14,7 @@ const TopNavContainer = styled.div`
   position: sticky;
   top: 0;
   width: 100%;
-  background: linear-gradient(to bottom, black, #15171c);
+  background: linear-gradient(to bottom, rgb(11, 11, 17), #15171c);
   height: 70px;
   display: flex;
   justify-content: space-between;
@@ -115,7 +115,7 @@ const SidebarNav = styled.nav`
 
 const SidebarWrap = styled.div`
   width: 100%;
-  background: linear-gradient(65deg, black, #15171c);
+  background: linear-gradient(65deg, rgb(11, 11, 17), #15171c);
 `;
 
 const InfoContainer = styled.div`

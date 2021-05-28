@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     bottom: 0,
     right: 0,
     color: "white",
-    backgroundImage: "linear-gradient(0deg, #050505 0%, #101010 100%)",
+    backgroundImage: "linear-gradient(0deg, rgb(11, 11, 17) 0%, #101010 100%)",
     borderTopLeftRadius: "25px",
     borderTop: "1px solid #303030",
     borderLeft: "1px solid #303030",
@@ -168,25 +168,33 @@ metascore, year, imdbRating, price, mylist }) {
               <div className="leftSide">
                 {
                   !userId ? (
-                    <LoginModal>
-                    <button className="btnModalCart">
-                        <div id="btnCartAdd">Add to cart</div> 
-                        <div id="btnCartPrice">${price}</div></button>
-                        </LoginModal>
+                    <div className="buttonsContainer">
+                      <LoginModal>
+                      <button className="btnModalCart">
+                          <div id="btnCartAdd">Add to cart</div> 
+                          <div id="btnCartPrice">${price}</div></button>
+                          </LoginModal>
+
+                      <TrailerModal videoId={title}>
+                      <button className="btnModalTrailerLogin">Trailer</button>
+                      </TrailerModal>
+
+                      <ReviewModal>
+                      <button className="btnModalTrailerLogin">Reviews</button>
+                      </ReviewModal>
+                    </div>
                   ) : (
                     <div className="buttonsContainer">
                     <button className="btnModalCart" onClick={addToCart}>
                         <div id="btnCartAdd">Add to cart</div> 
                         <div id="btnCartPrice">${price}</div></button>
 
-                    <TrailerModal
-                      videoId={title}
-                    >
+                    <TrailerModal videoId={title}>
                       <button className="btnModalTrailer">Trailer</button>
                     </TrailerModal>
 
                     <ReviewModal>
-                      <button className="btnModalReviews">Reviews</button>
+                      <button className="btnModalTrailer">Reviews</button>
                     </ReviewModal>
 
                     </div>
