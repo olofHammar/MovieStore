@@ -73,6 +73,23 @@ function Row({ title, category, rowId, id }) {
             left: containerScrollPosition + 700,
             behavior: 'smooth'
             })
+
+        } else if (title === "Top Family Movies") {
+            let container = document.getElementById("topfamilyMovies")
+            let containerScrollPosition = document.getElementById("topfamilyMovies").scrollLeft
+            console.log(containerScrollPosition)
+            container.scrollTo({
+            left: containerScrollPosition + 700,
+            behavior: 'smooth'
+            })  
+        } else if (title === "Adventures Movies") {
+            let container = document.getElementById("adventuresMovies")
+            let containerScrollPosition = document.getElementById("adventuresMovies").scrollLeft
+            console.log(containerScrollPosition)
+            container.scrollTo({
+            left: containerScrollPosition + 700,
+            behavior: 'smooth'
+            })  
         } else if (title === "Family Movies") {
             let container = document.getElementById("familyMovies")
             let containerScrollPosition = document.getElementById("familyMovies").scrollLeft
@@ -81,6 +98,14 @@ function Row({ title, category, rowId, id }) {
             left: containerScrollPosition + 700,
             behavior: 'smooth'
             })
+        } else if (title === "New Family Movies") {
+            let container = document.getElementById("newFamilyMovies")
+            let containerScrollPosition = document.getElementById("newFamilyMovies").scrollLeft
+            console.log(containerScrollPosition)
+            container.scrollTo({
+            left: containerScrollPosition + 700,
+            behavior: 'smooth'
+            })  
         } else if (title === "Horror Movies") {
             let container = document.getElementById("horrorMovies")
             let containerScrollPosition = document.getElementById("horrorMovies").scrollLeft
@@ -131,7 +156,7 @@ function Row({ title, category, rowId, id }) {
             })
         } else if (title === "Animated Movies") {
             let container = document.getElementById("animatedMovies")
-            let containerScrollPosition = document.getElementById("actionMovies").scrollLeft
+            let containerScrollPosition = document.getElementById("animatedMovies").scrollLeft
             console.log(containerScrollPosition)
             container.scrollTo({
             left: containerScrollPosition - 700,
@@ -145,6 +170,22 @@ function Row({ title, category, rowId, id }) {
             left: containerScrollPosition - 700,
             behavior: 'smooth'
             })
+        } else if (title === "Top Family Movies") {
+            let container = document.getElementById("topfamilyMovies")
+            let containerScrollPosition = document.getElementById("topfamilyMovies").scrollLeft
+            console.log(containerScrollPosition)
+            container.scrollTo({
+            left: containerScrollPosition - 700,
+            behavior: 'smooth'
+            })
+        }else if (title === "Adventures Movies") {
+                let container = document.getElementById("adventuresMovies")
+                let containerScrollPosition = document.getElementById("adventuresMovies").scrollLeft
+                console.log(containerScrollPosition)
+                container.scrollTo({
+                left: containerScrollPosition - 700,
+                behavior: 'smooth'
+                })     
         } else if (title === "Family Movies") {
             let container = document.getElementById("familyMovies")
             let containerScrollPosition = document.getElementById("familyMovies").scrollLeft
@@ -152,7 +193,15 @@ function Row({ title, category, rowId, id }) {
             container.scrollTo({
             left: containerScrollPosition - 700,
             behavior: 'smooth'
-            })
+            })   
+        } else if (title === "New Family Movies") {
+            let container = document.getElementById("newFamilyMovies")
+            let containerScrollPosition = document.getElementById("newFamilyMovies").scrollLeft
+            console.log(containerScrollPosition)
+            container.scrollTo({
+            left: containerScrollPosition - 700,
+            behavior: 'smooth'
+            })   
         } else if (title === "Horror Movies") {
             let container = document.getElementById("horrorMovies")
             let containerScrollPosition = document.getElementById("horrorMovies").scrollLeft

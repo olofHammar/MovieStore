@@ -1,0 +1,42 @@
+.familyimageContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 300px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: rgb(15, 15, 15);
+  }
+  
+  .familylogo_image {
+    height: 300px;
+    margin-left: 30px;
+    margin-bottom: 80px;
+    margin-right: 50px;
+  }
+  
+  .familyimage {
+    height: 200px;
+    border-radius: 25px;
+    /*box-shadow: 0px 0px 20px 0px rgb(235, 5, 5);*/
+    transform: scale(1);
+    animation: pulse-red 2s infinite;
+  }
+
+  
+  @keyframes pulse-red {
+    0% {
+      transform: scale(1);
+      box-shadow: 0px 0px 20px 0px rgb(209, 82, 255);
+    }
+    
+    70% {
+      transform: scale(1);
+      box-shadow: 0px 0px 10px 0px rgba(15, 121, 227, 0.7);
+    }
+    
+    100% {
+      transform: scale(1);
+      box-shadow: 0px 0px 20px 0px rgb(92, 22, 139);
+    }
+  }

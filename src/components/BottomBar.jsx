@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import image from '../img/m_logo.png';
+import { Link } from 'react-router-dom';
+
 
 const Nav = styled.div`
   background: linear-gradient(to top, black, #15171c);
@@ -30,8 +32,12 @@ const BottomBar = ({handleLogout}) => {
   return (
     <Nav> 
       <LogoImage src={image} /> 
-      <NavTitle>ALL TIME BEST SELLERS</NavTitle>
-      <NavTitle>NEW ARRIVALS</NavTitle>
+      <Link to="family" style={{ textDecoration: 'none' }}>
+      <NavTitle>FAMILY</NavTitle> 
+      </Link>
+      <NavTitle>MY LIST
+      </NavTitle>
+
       <NavTitle>COMING SOON</NavTitle>
       <NavTitle>MESSAGE BOARD</NavTitle>
     </Nav>

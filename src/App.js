@@ -10,6 +10,7 @@ import Sidebar from './components/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useDispatch} from 'react-redux';
 import { setUserLogOutState } from './features/userSlice'; 
+import Family from './components/FamilyFilter';
 
 
 function App() {
@@ -47,6 +48,10 @@ function App() {
 
             <Route path= '/collections'>
               <Collections />
+            </Route>
+
+            <Route path="/family">
+              <Family />
             </Route>
 
          </Switch>

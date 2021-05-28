@@ -98,10 +98,13 @@ const animatedMovies = [
     "?t=the+little+mermaid&plot=full&apikey=38795606&=",
     "?t=aladdin&plot=full&apikey=38795606&y=1992",
     "?t=bee+movie&plot=full&apikey=38795606&=",
+    "?t=frozen&plot=full&apikey=38795606&=",
+    "?t=ninjago&plot=full&apikey=38795606&=",
     "?t=spirited+away&plot=full&apikey=38795606&=",
     "?t=shrek&plot=full&apikey=38795606&=",
     "?t=shrek+2&plot=full&apikey=38795606&=",
-    "?t=cars&plot=full&apikey=38795606&="
+    "?t=cars&plot=full&apikey=38795606&=",
+
 ]
 
 const dramaMovies = [
@@ -125,10 +128,11 @@ const dramaMovies = [
     "?t=thelma+%26+louise&plot=full&apikey=38795606&="
 ]
 
-const familyMovies = [
+const topfamilyMovies = [
     "?t=ratatouille&plot=full&apikey=38795606&=",
     "?t=hook&plot=full&apikey=38795606&=",
     "?t=narnia&plot=full&apikey=38795606&=",
+    "?t=frozen&plot=full&apikey=38795606&=",
     "?t=harry+potter&plot=full&apikey=38795606&=",
     "?t=jumanji&plot=full&apikey=38795606&=",
     "?t=home+alone&plot=full&apikey=38795606&=",
@@ -142,7 +146,73 @@ const familyMovies = [
     "?t=paddington&plot=full&apikey=38795606&=",
     "?t=the+parent+trap&plot=full&apikey=38795606&=",
     "?t=the+mighty+ducks&plot=full&apikey=38795606&=",
-    "?t=ice+age&plot=full&apikey=38795606&="
+    "?t=ice+age&plot=full&apikey=38795606&=",
+    "?t=star+wars&plot=full&apikey=38795606&=",
+    "?t=tarzan&plot=full&apikey=38795606&=",
+
+
+]
+
+const adventuresMovies = [
+    "?t=tarzan&plot=full&apikey=38795606&=",
+    "?t=soul&plot=full&apikey=38795606&=",
+    "?t=spongebob&plot=full&apikey=38795606&=",
+    "?t=ninjago&plot=full&apikey=38795606&=",
+    "?t=lego&plot=full&apikey=38795606&=",
+    "?t=the+bfg&plot=full&apikey=38795606&=",
+    "?t=onward&plot=full&apikey=38795606&=",
+    "?t=home&plot=full&apikey=38795606&=",
+    "?t=shrek&plot=full&apikey=38795606&=",
+    "?t=Madagascar&plot=full&apikey=38795606&=",
+    "?t=panda&plot=full&apikey=38795606&=",
+    
+
+]
+
+const newFamilyMovies = [
+    "?t=onward&plot=full&apikey=38795606&=",
+    "?t=home&plot=full&apikey=38795606&=",
+    "?t=national+treasure&plot=full&apikey=38795606&=",
+    "?t=Madagascar&plot=full&apikey=38795606&=",
+    "?t=home+alone&plot=full&apikey=38795606&=",
+    "?t=my+girl&plot=full&apikey=38795606&=",
+    "?t=panda&plot=full&apikey=38795606&=",
+    "?t=soul&plot=full&apikey=38795606&=",
+    "?t=spongebob&plot=full&apikey=38795606&=",
+    "?t=ninjago&plot=full&apikey=38795606&=",
+    "?t=lego&plot=full&apikey=38795606&=",
+    "?t=tarzan&plot=full&apikey=38795606&=",
+    "?t=spongebob&plot=full&apikey=38795606&=",
+    "?t=ninjago&plot=full&apikey=38795606&=",
+    "?t=lego&plot=full&apikey=38795606&=",
+    "?t=shrek&plot=full&apikey=38795606&=",
+    "?t=the+bfg&plot=full&apikey=38795606&=",
+    "?t=the+bfg&plot=full&apikey=38795606&=",
+  
+    
+
+]
+
+
+
+const familyMovies = [
+    "?t=turbo&plot=full&apikey=38795606&=",
+    "?t=cars&plot=full&apikey=38795606&=",
+    "?t=pirates+of+the+caribbean&plot=full&apikey=38795606&=",
+    "?t=gremlins&plot=full&apikey=38795606&=",
+    "?t=paddington&plot=full&apikey=38795606&=",
+    "?t=air+bud&plot=full&apikey=38795606&=",
+    "?t=my+girl&plot=full&apikey=38795606&=",
+    "?t=the+parent+trap&plot=full&apikey=38795606&=",
+    "?t=the+mighty+ducks&plot=full&apikey=38795606&=",
+    "?t=ice+age&plot=full&apikey=38795606&=",
+    "?t=minions&plot=full&apikey=38795606&=",
+    "?t=shrek+the+third&plot=full&apikey=38795606&=",
+    "?t=jumanji&plot=full&apikey=38795606&=",
+    "?t=national+treasure&plot=full&apikey=38795606&=",
+    "?t=narnia&plot=full&apikey=38795606&=",
+    "?t=harry+potter&plot=full&apikey=38795606&=",
+    "?t=mrs+doubtfire&plot=full&apikey=38795606&y=1993",
 ]
 
 const horrorMovies = [
@@ -166,4 +236,4 @@ const horrorMovies = [
 ]
 
 export default { topMovies, comedyMovies, actionMovies, documentayMovies, animatedMovies,
-                 dramaMovies, familyMovies, horrorMovies };
+                 dramaMovies, topfamilyMovies, familyMovies, horrorMovies, adventuresMovies, newFamilyMovies };
