@@ -9,13 +9,14 @@ import MyList from './components/MyList';
 import './App.css';
 import Sidebar from './components/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
+import Family from './components/FamilyFilter';
 import CardList from './components/SearchElement/CardList'
 import SearchBar from './components/SearchElement/SearchBar'
 import SearchPage from './components/SearchPage';
 
 import { useDispatch, useSelector} from 'react-redux';
 import { setCurrentUser, setUserLogOutState, getUserId } from './features/userSlice'; 
+
 
 
 
@@ -103,8 +104,14 @@ function App() {
               <Collections />
             </Route>
 
+
+            <Route path="/family">
+              <Family />
+                </Route>
+
             <Route path="/myList">
               <MyList myList={ myList } />
+
             </Route>
 
          </Switch>

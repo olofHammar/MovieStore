@@ -57,6 +57,8 @@ export const SidebarData  = [
 
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
+    
+
 
     subNav: [
       {
@@ -70,5 +72,7 @@ export const SidebarData  = [
         icon: <IoIcons.IoIosPaper />
       }
     ]
+
   }
+
 ];

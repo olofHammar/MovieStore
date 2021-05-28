@@ -1,0 +1,19 @@
+.familyfilterContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    background: linear-gradient(to right, #9c27b0,#8ecdff);
+    overflow-x: hidden;
+  }
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    color:#7513de;
+    text-decoration:none; 
+    cursor:pointer;  
+}
+  
