@@ -1,5 +1,6 @@
 .collectionsContainer {
   padding: 20px;
-  background-color: black;
+  background: linear-gradient(to top, rgb(11, 11, 17), #15171c);
+  color: white;
   height: 100vh;
 }

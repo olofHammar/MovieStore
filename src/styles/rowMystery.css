@@ -5,7 +5,7 @@
     height: 300px;
     margin-top: 50px;
     margin-bottom: 50px;
-    background: rgb(15, 15, 15);
+    background: rgb(16, 16, 22);
   }
   
   .rowMystery p {
@@ -14,7 +14,7 @@
     font-size: 35px;
     font-family: Hack, sans-serif;
     text-transform: uppercase;
-    background: linear-gradient(90deg, #000, rgb(228, 201, 144), #000);
+    background: linear-gradient(90deg, rgb(0, 0, 0), rgb(228, 201, 144), #000);
     letter-spacing: 5px;
     -webkit-background-clip: text;
     background-clip: text;

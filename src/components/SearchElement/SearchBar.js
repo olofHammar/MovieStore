@@ -18,6 +18,7 @@ function Searchbar({ onSearch }) {
     }
   }
 
+
   return (
     <div className="searchBarContainer">
       <div className="searchBar"> 

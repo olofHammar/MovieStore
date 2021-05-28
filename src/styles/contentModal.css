@@ -188,7 +188,7 @@
   transition: all 0.4s;
 }
 
-.btnModalReviews {
+.btnModalTrailerLogin {
   min-width: 130px;
   height: 60px;
   position: relative;
@@ -207,6 +207,7 @@
   letter-spacing: 2px;
   padding: 15px 30px;
   margin-left: 30px;
+  margin-top: 10px;
   text-transform: uppercase;
   cursor: pointer;
   display: inline-block;
@@ -238,34 +239,9 @@
   background: rgb(33, 112, 37);
 }
 
-.btnModalTrailer:hover {
+.btnModalTrailer:hover,
+.btnModalTrailerLogin:hover {
   background: rgb(41, 41, 41);
-}
-
-.btnModalCartLogin {
-  width: 250px;
-  height: 60px;
-  position: relative;
-  text-align: start;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  background: orange;
-  color: white;
-  border: 1px solid rgb(230, 150, 2);
-  border-radius: 8px;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 15px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  padding: 15px 30px;
-  margin-top: -10px;
-  text-transform: uppercase;
-  cursor: pointer;
-  display: inline-block;
-  -webkit-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
 }
 
 #plusIcon {

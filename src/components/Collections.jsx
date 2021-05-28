@@ -9,7 +9,7 @@ function Collections() {
 
     return (
         <div className="collectionsContainer">
-            This is collections for { title }
+            <h3>This is collections for { title }</h3>
         </div>
     )
 }
