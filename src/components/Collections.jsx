@@ -1,16 +1,15 @@
 import React from 'react';
 import '../styles/collections.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { getTitle } from '../features/titleSlice';
+import { useParams } from 'react-router-dom';
 
 
 function Collections() {
 
-    const title = useSelector(getTitle);
+    const { title } = useParams();
 
     return (
         <div className="collectionsContainer">
-            This is collections for { title }
+            <h3>This is collections for { title }</h3>
         </div>
     )
 }

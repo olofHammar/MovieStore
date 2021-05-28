@@ -1,0 +1,45 @@
+.trailerBodyContainer {
+  box-sizing: border-box;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background: linear-gradient(to top, rgb(11, 11, 17), #15171c);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 14px;
+  font-weight: 400;
+  height: 100vh;
+  width: 100%;
+  justify-items: center;
+}
+
+.btnTrailerClose {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-top: 20px;
+  padding-right: 20px;
+  font-size: 30px;
+  font-weight: bolder;
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.videoContainer {
+  width: 100%;
+  height: 400px;
+}
+
+.trailerTitle {
+  display: flex;
+  font-size: 3rem;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  letter-spacing: 1.43px;
+}

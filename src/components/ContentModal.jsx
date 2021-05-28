@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import { Backdrop } from '@material-ui/core';
@@ -9,6 +9,10 @@ import { db } from '../firebase';
 import { useSelector } from 'react-redux';
 import { getUserId } from '../features/userSlice';
 import LoginModal from './LoginModal';
+import TrailerModal from './TrailerModal';
+import ReviewModal from './ReviewModal';
+import check from '../img/v_white.png';
+import plus from '../img/add_white.png';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -27,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     bottom: 0,
     right: 0,
     color: "white",
-    backgroundImage: "linear-gradient(0deg, #050505 0%, #101010 100%)",
+    backgroundImage: "linear-gradient(0deg, rgb(11, 11, 17) 0%, #101010 100%)",
     borderTopLeftRadius: "25px",
     borderTop: "1px solid #303030",
     borderLeft: "1px solid #303030",
@@ -37,10 +41,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ContentModal({ children, id, title, poster, plot, cast, director, genre, rated, 
-metascore, year, imdbRating, price }) {
+metascore, year, imdbRating, price, mylist }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const [movieAdded, setMovieAdded] = React.useState(false);
+  const [myList, setMyList] = useState(false);
   const userId = useSelector(getUserId);
 
   const handleOpen = () => {
@@ -51,6 +55,41 @@ metascore, year, imdbRating, price }) {
   const handleClose = () => {
     setOpen(false);
   };
+
+  useEffect(() => {
+    if (userId === null) { return }
+    let movie = db.collection('users').doc(userId).collection('myList').doc(id)
+    movie.get()
+    .then((doc) => {
+      if(doc.exists) {
+        setMyList(true);
+      } else {
+        setMyList(false);
+      }
+    })
+
+  }, [open]);
+
+  const handleMyList = () => {
+    if (userId === null) { return }
+    setMyList(!myList);
+    if(!myList) {
+      let movie = db.collection('users').doc(userId).collection('myList').doc(id)
+      movie.set({
+        id: id,
+        url: `http://www.omdbapi.com/?i=${id}&plot=full&apikey=38795606`
+      })
+    } else {
+      if (userId === null) { return }
+      let movie = db.collection('users').doc(userId).collection('myList').doc(id)
+      movie.delete()
+      console.log(mylist);
+      console.log(title)
+      if(mylist === "My List") {
+        handleClose();
+      }      
+    }
+  }
 
   const addToCart = () => {
     const cartItem = db.collection('users').doc(userId).collection('cartItems').doc(id)
@@ -126,24 +165,64 @@ metascore, year, imdbRating, price }) {
             </div>
             <h5 id="transition-modal-description" className="moviePlot">{plot}...</h5>
             <div className="bottomRow">
+              <div className="leftSide">
+                {
+                  !userId ? (
+                    <div className="buttonsContainer">
+                      <LoginModal>
+                      <button className="btnModalCart">
+                          <div id="btnCartAdd">Add to cart</div> 
+                          <div id="btnCartPrice">${price}</div></button>
+                          </LoginModal>
+
+                      <TrailerModal videoId={title}>
+                      <button className="btnModalTrailerLogin">Trailer</button>
+                      </TrailerModal>
+
+                      <ReviewModal>
+                      <button className="btnModalTrailerLogin">Reviews</button>
+                      </ReviewModal>
+                    </div>
+                  ) : (
+                    <div className="buttonsContainer">
+                    <button className="btnModalCart" onClick={addToCart}>
+                        <div id="btnCartAdd">Add to cart</div> 
+                        <div id="btnCartPrice">${price}</div></button>
+
+                    <TrailerModal videoId={title}>
+                      <button className="btnModalTrailer">Trailer</button>
+                    </TrailerModal>
+
+                    <ReviewModal>
+                      <button className="btnModalTrailer">Reviews</button>
+                    </ReviewModal>
+
+                    </div>
+                  )
+                }
+              </div>
               {
-                !userId ? (
-                  <LoginModal>
-                  <button className="btnModalCart">
-                      <div id="btnCartAdd">Add to cart</div> 
-                      <div id="btnCartPrice">${price}</div></button>
-                      </LoginModal>
+                userId ? (
+                  <div className="rightSide">
+                  {
+                    myList ? (
+                      <span className="spanCheck"><img src={ check } id="checkIcon" onClick={handleMyList} /></span>
+                    ) : (
+                      <span className="spanPlus"><img src={ plus } id="plusIcon" onClick={handleMyList}/></span>
+                    )
+                  }
+                </div>
                 ) : (
-                  <button className="btnModalCart" onClick={addToCart}>
-                      <div id="btnCartAdd">Add to cart</div> 
-                      <div id="btnCartPrice">${price}</div></button>
+                  <>
+                  </>
                 )
+
               }
             </div>
-            </div>
-            <button className="btnModalClose" onClick={handleClose}>X</button>
-            </div>
           </div>
+        <button className="btnModalClose" onClick={handleClose}>X</button>
+      </div>
+    </div>
         </Slide>
       </Modal>
     </>

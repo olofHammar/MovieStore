@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 const Nav = styled.div`
-  background: linear-gradient(to top, black, #15171c);
+  background: linear-gradient(to top, rgb(11, 11, 17), #15171c);
   height: 80px;
   padding-bottom: 10px;
   padding-top: 10px;
@@ -22,9 +22,43 @@ const LogoImage = styled.img`
 `
 
 const NavTitle = styled.h4`
-  padding: 0 10px;
+  display: flex;
+  width: 220px;
+  height: 55px;
+  justify-content: center;
+  align-items; center;
+  text-align: center;
+  color: white;
+  padding: 15px 10px;
   font-size: 15px;
   letter-spacing: 1.42px;
+  cursor: pointer;
+
+  span {
+
+    position: relative;
+
+    &:after {
+      content: "";
+      height: 2px; 
+      background: white;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -5px;
+      opacity: 0;
+      transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+      transform: scaleX(0);
+    }
+  }
+
+  &:hover {
+    span:after {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+  }
+
 `
 
 const BottomBar = ({handleLogout}) => {
@@ -32,14 +66,17 @@ const BottomBar = ({handleLogout}) => {
   return (
     <Nav> 
       <LogoImage src={image} /> 
+
       <Link to="family" style={{ textDecoration: 'none' }}>
       <NavTitle>FAMILY</NavTitle> 
       </Link>
-      <NavTitle>MY LIST
-      </NavTitle>
+       <Link to='/myList' style={{ textDecoration: 'none' }}>
+        <NavTitle><span>MY LIST</span></NavTitle>
+      </Link>
 
       <NavTitle>COMING SOON</NavTitle>
       <NavTitle>MESSAGE BOARD</NavTitle>
+
     </Nav>
   );
 };

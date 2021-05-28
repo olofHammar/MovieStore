@@ -20,7 +20,6 @@ function Row({ title, category, rowId, id }) {
             }
             }));     
             fetchMovies.then(data=> setMovies(data));
-            console.log(movies);
     }, []);
 
     const scrollRight = (e) => {
@@ -140,7 +139,7 @@ function Row({ title, category, rowId, id }) {
             })
         } else if (title === "Comedy Movies") {
             let container = document.getElementById("comedyMovies")
-            let containerScrollPosition = document.getElementById("actionMovies").scrollLeft
+            let containerScrollPosition = document.getElementById("comedyMovies").scrollLeft
             console.log(containerScrollPosition)
             container.scrollTo({
             left: containerScrollPosition - 700,
@@ -148,7 +147,7 @@ function Row({ title, category, rowId, id }) {
             })
         } else if (title === "Documentaries") {
             let container = document.getElementById("documentary")
-            let containerScrollPosition = document.getElementById("actionMovies").scrollLeft
+            let containerScrollPosition = document.getElementById("documentary").scrollLeft
             console.log(containerScrollPosition)
             container.scrollTo({
             left: containerScrollPosition - 700,

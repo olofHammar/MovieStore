@@ -1,5 +1,5 @@
 .cartContainer {
   padding: 20px;
-  background: black;
+  background: linear-gradient(to top, rgb(11, 11, 17), #15171c);
   height: 100vh;
 }
