@@ -49,7 +49,7 @@ metascore, year, imdbRating, price, mylist }) {
 
   const handleOpen = () => {
     setOpen(true);
-    
+    //console.log(id);
   };
 
   const handleClose = () => {
@@ -179,7 +179,7 @@ metascore, year, imdbRating, price, mylist }) {
                       <button className="btnModalTrailerLogin">Trailer</button>
                       </TrailerModal>
 
-                      <ReviewModal>
+                      <ReviewModal id={ id }>
                       <button className="btnModalTrailerLogin">Reviews</button>
                       </ReviewModal>
                     </div>
@@ -193,7 +193,7 @@ metascore, year, imdbRating, price, mylist }) {
                       <button className="btnModalTrailer">Trailer</button>
                     </TrailerModal>
 
-                    <ReviewModal>
+                    <ReviewModal id={id}>
                       <button className="btnModalTrailer">Reviews</button>
                     </ReviewModal>
 
