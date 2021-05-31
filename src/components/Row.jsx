@@ -80,7 +80,16 @@ function Row({ title, category, rowId, id }) {
             container.scrollTo({
             left: containerScrollPosition + 700,
             behavior: 'smooth'
-            })  
+            }) 
+            
+        } else if (title === "Sci-fi Family Movies") {
+            let container = document.getElementById("sciFifamilyMovies")
+            let containerScrollPosition = document.getElementById("sciFifamilyMovies").scrollLeft
+            console.log(containerScrollPosition)
+            container.scrollTo({
+            left: containerScrollPosition + 700,
+            behavior: 'smooth'
+            })   
         } else if (title === "Adventures Movies") {
             let container = document.getElementById("adventuresMovies")
             let containerScrollPosition = document.getElementById("adventuresMovies").scrollLeft
@@ -177,6 +186,14 @@ function Row({ title, category, rowId, id }) {
             left: containerScrollPosition - 700,
             behavior: 'smooth'
             })
+        } else if (title === "Sci-fi Family Movies") {
+            let container = document.getElementById("sciFifamilyMovies")
+            let containerScrollPosition = document.getElementById("sciFifamilyMovies").scrollLeft
+            console.log(containerScrollPosition)
+            container.scrollTo({
+            left: containerScrollPosition - 700,
+            behavior: 'smooth'
+            })   
         }else if (title === "Adventures Movies") {
                 let container = document.getElementById("adventuresMovies")
                 let containerScrollPosition = document.getElementById("adventuresMovies").scrollLeft

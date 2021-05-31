@@ -19,7 +19,15 @@ function Family() {
              category={ movieLists.animatedMovies }
              rowId="rowFive"
              id="animatedMovies"/>
+        <Row title="Sci-fi Family Movies" 
+             category={ movieLists.sciFifamilyMovies }
+             rowId="rowFive"
+             id="sciFifamilyMovies"/>
         <RowFamily />
+        <Row title="New Family Movies" 
+             category={ movieLists.newFamilyMovies }
+             rowId="rowFive"
+             id="newFamilyMovies"/>
         <Row title="Family Movies" 
              category={ movieLists.familyMovies }
              rowId="rowSeven"
@@ -28,11 +36,7 @@ function Family() {
              category={ movieLists.adventuresMovies }
              rowId="rowSeven"
              id="adventuresMovies"/>
-                <Row title="New Family Movies" 
-             category={ movieLists.newFamilyMovies }
-             rowId="rowFive"
-             id="newFamilyMovies"/>
-          
+         
        
    </div>
     )
