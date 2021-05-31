@@ -61,6 +61,7 @@ const NavIconSignIn = styled(Link)`
   text-decoration: none;
   &:hover {
     background: #252831;
+    color: white;
     border-left: 4px solid #632ce4;
     cursor: pointer;
   }
@@ -84,6 +85,7 @@ const NavIconSignOut = styled(Link)`
   text-decoration: none;
   &:hover {
     background: #252831;
+    color: white;
     border-left: 4px solid #632ce4;
     cursor: pointer;
   }
@@ -106,6 +108,7 @@ const SidebarNav = styled.nav`
   height: 100vh;
   display: flex;
   justify-content: center;
+  text-decoration: none;
   position: fixed;
   top: 0;
   left: ${({ sidebar }) => (sidebar ? '0' : '-100%')};

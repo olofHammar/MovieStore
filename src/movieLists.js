@@ -104,7 +104,6 @@ const animatedMovies = [
     "?t=shrek&plot=full&apikey=38795606&=",
     "?t=shrek+2&plot=full&apikey=38795606&=",
     "?t=cars&plot=full&apikey=38795606&=",
-
 ]
 
 const dramaMovies = [
@@ -149,8 +148,6 @@ const topfamilyMovies = [
     "?t=ice+age&plot=full&apikey=38795606&=",
     "?t=star+wars&plot=full&apikey=38795606&=",
     "?t=tarzan&plot=full&apikey=38795606&=",
-
-
 ]
 
 const adventuresMovies = [
@@ -165,8 +162,6 @@ const adventuresMovies = [
     "?t=shrek&plot=full&apikey=38795606&=",
     "?t=Madagascar&plot=full&apikey=38795606&=",
     "?t=panda&plot=full&apikey=38795606&=",
-    
-
 ]
 
 const newFamilyMovies = [
@@ -188,12 +183,7 @@ const newFamilyMovies = [
     "?t=shrek&plot=full&apikey=38795606&=",
     "?t=the+bfg&plot=full&apikey=38795606&=",
     "?t=the+bfg&plot=full&apikey=38795606&=",
-  
-    
-
 ]
-
-
 
 const familyMovies = [
     "?t=turbo&plot=full&apikey=38795606&=",

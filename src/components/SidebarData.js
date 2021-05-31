@@ -48,7 +48,7 @@ export const SidebarData  = [
   {
     title: 'Search Page',
     path: '/SearchPage',
-    icon: <IoIcons.IoMdPeople />
+    icon: <IoIcons.IoIosSearch />
   },
   {
     title: 'Messages',

@@ -68,14 +68,14 @@ const BottomBar = ({handleLogout}) => {
       <LogoImage src={image} /> 
 
       <Link to="family" style={{ textDecoration: 'none' }}>
-      <NavTitle>FAMILY</NavTitle> 
+      <NavTitle><span>FAMILY</span></NavTitle> 
       </Link>
        <Link to='/myList' style={{ textDecoration: 'none' }}>
         <NavTitle><span>MY LIST</span></NavTitle>
       </Link>
 
-      <NavTitle>COMING SOON</NavTitle>
-      <NavTitle>MESSAGE BOARD</NavTitle>
+      <NavTitle><span>COMING SOON</span></NavTitle>
+      <NavTitle><span>MESSAGE BOARD</span></NavTitle>
 
     </Nav>
   );

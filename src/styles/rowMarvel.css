@@ -20,10 +20,10 @@
   border-radius: 25px;
   /*box-shadow: 0px 0px 20px 0px rgb(235, 5, 5);*/
   transform: scale(1);
-  animation: pulse-red 2s infinite;
+  animation: pulse-marvel 2s infinite;
 }
 
-@keyframes pulse-red {
+@keyframes pulse-marvel {
   0% {
     transform: scale(1);
     box-shadow: 0px 0px 20px 0px rgb(255, 82, 82, 1);

@@ -160,7 +160,7 @@ export default function LoginModal({ children }) {
     
     <div className="rightContainer">
         <div className="inputContainer">
-            <h3 className="userName">Username</h3>
+            <h3 className="userName">E-mail</h3>
             <input className="unserNameInput"
                 type="text" 
                 autoFocus 

@@ -47,7 +47,6 @@ function App() {
         data: doc.data()
       })
       )
-
       setCartItems(tempItems);
     })
   }
@@ -81,7 +80,7 @@ function App() {
           <Switch>
 
             <Route path="/cart">
-              <Cart />
+              <Cart cartItems={ cartItems } />
             </Route>
     
             <Route exact path="/">
