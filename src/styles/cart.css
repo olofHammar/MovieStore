@@ -28,3 +28,22 @@
   background-color: blue;
   padding: 20px;
 }
+
+.quantityButton {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  text-emphasis-color: black;
+}
+
+.inputQuantity{
+  display: flex;
+  border: 5px black;
+  align-items: center;
+  justify-content: center;
+  padding: auto;
+  width: 50px;
+  font-size: large;
+  text-align: center;
+  color: black;
+}

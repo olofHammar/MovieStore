@@ -13,6 +13,7 @@ import Family from './components/FamilyFilter';
 import CardList from './components/SearchElement/CardList'
 import SearchBar from './components/SearchElement/SearchBar'
 import SearchPage from './components/SearchPage';
+import Checkout from './components/Checkout'
 
 import { useDispatch, useSelector} from 'react-redux';
 import { setCurrentUser, setUserLogOutState, getUserId } from './features/userSlice'; 
@@ -103,6 +104,9 @@ function App() {
               <Collections />
             </Route>
 
+            <Route exact path="/checkout">
+              <Checkout/>
+            </Route>
 
             <Route path="/family">
               <Family />
