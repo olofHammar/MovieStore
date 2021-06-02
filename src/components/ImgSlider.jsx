@@ -4,17 +4,13 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from 'react-router-dom';
-import pixar from '../img/slider_pixar.png';
 import jackson from '../img/slider_jackson.jpg';
 import musical from '../img/slider_musical.png';
 import stand_up from '../img/slider_stand_up.png';
 import tarantino from '../img/slider_tarantino.png';
-import { useDispatch } from 'react-redux';
 import BottomBar from '../components/BottomBar';
 
 function ImgSlider() {
-
-    const dispatch = useDispatch();
 
     let settings  = {
         dots: true,
@@ -28,14 +24,9 @@ function ImgSlider() {
     return (
         <CarouselContainer>
         <Carousel {...settings }>
-            <Wrap>
-                <Link to='collections/pixar'>
-                    <img src={ pixar }/>
-                </Link>
-            </Wrap>
 
             <Wrap >
-                <Link to='collections/peter_jackson'>
+                <Link to='collections/jackson'>
                     <img src={ jackson }/>
                 </Link>
             </Wrap>

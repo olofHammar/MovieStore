@@ -37,6 +37,10 @@ const CartIconContainer = styled(Link)`
       padding-left: 10px;
       color: orange;
   }
+
+  &:hover {
+    color: white;
+  }
 `;
 
 const NavIcon = styled(Link)`
@@ -122,6 +126,7 @@ const SidebarWrap = styled.div`
 `;
 
 const InfoContainer = styled.div`
+  color: white;
   letter-spacing: 1.43px;
   margin-bottom: 15px;
   margin-left: 5px;
@@ -134,6 +139,22 @@ const InfoContainer = styled.div`
     }
 
 `;
+
+const InfoContainerSignIn = styled.div`
+  letter-spacing: 1.43px;
+  margin-bottom: 15px;
+  margin-left: -10px;
+  margin-bottom: 25px;
+    span {
+      font-size: 0.8rem;
+    }
+    h4 {
+      font-size: 1rem;
+      padding-bottom: 2px;
+    }
+
+`;
+
 
 function Sidebar({ handleLogout, cartItems }) {
     const [sidebar, setSidebar] = useState(false);
@@ -206,7 +227,7 @@ function Sidebar({ handleLogout, cartItems }) {
               userId ? (
                 <CartIconContainer>
                   <FaIcons.FaUser />
-                  <InfoContainer>
+                  <InfoContainer onClick={handleLogout}>
                     <span>ACCOUNT</span>
                     <h4>{ userEmail }</h4>
                   </InfoContainer>
@@ -215,10 +236,10 @@ function Sidebar({ handleLogout, cartItems }) {
                 <CartIconContainer>
                   <FaIcons.FaUser />
                   <LoginModal>
-                    <InfoContainer>
+                    <InfoContainerSignIn>
                       <span>ACCOUNT</span>
                       <h4>Sign in here</h4>
-                    </InfoContainer>
+                    </InfoContainerSignIn>
                   </LoginModal>
               </CartIconContainer>
               )

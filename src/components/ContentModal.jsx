@@ -4,6 +4,7 @@ import Modal from '@material-ui/core/Modal';
 import { Backdrop } from '@material-ui/core';
 import '../styles/contentModal.css';
 import imdb_logo from '../img/imdb_logo.png';
+import mn_logo from '../img/m_logo.png'
 import Slide from '@material-ui/core/Slide';
 import { db } from '../firebase';
 import { useSelector } from 'react-redux';
@@ -41,15 +42,19 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ContentModal({ children, id, title, poster, plot, cast, director, genre, rated, 
-metascore, year, imdbRating, price, mylist }) {
+ year, imdbRating, price, mylist }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [myList, setMyList] = useState(false);
   const userId = useSelector(getUserId);
+  const [mnRating, setMnRating] = useState('-');
+  const [maxGenre, setMaxGenre] = useState('');
 
   const handleOpen = () => {
     setOpen(true);
-    //console.log(id);
+    handleRating();
+    handleGenre();
+    //console.log(genre);
   };
 
   const handleClose = () => {
@@ -69,6 +74,33 @@ metascore, year, imdbRating, price, mylist }) {
     })
 
   }, [open]);
+
+  const handleGenre = () => {
+    var genreArray = genre.split(',');
+    if (genreArray[1] === undefined ) {
+      setMaxGenre(`${genreArray[0]}`);
+    } else {
+      setMaxGenre(`${genreArray[0]}, ${genreArray[1]}`);
+    }
+  }
+
+  const handleRating = () => {
+    let tempRating = 0;
+    let count = 0;
+    db.collection('movies').doc(id).collection('reviews').onSnapshot((snapshot) => {
+      snapshot.docs.map((doc) => (
+        tempRating += doc.data().rating,
+        count += 1
+      ))
+      tempRating = (tempRating/count);
+      let rating = Math.round(tempRating * 10) / 10
+      if (!rating) {
+        setMnRating('-');
+      } else {
+        setMnRating(rating);
+      }
+    })
+  }
 
   const handleMyList = () => {
     if (userId === null) { return }
@@ -108,6 +140,7 @@ metascore, year, imdbRating, price, mylist }) {
             
         } else {
                 cartItem.set({
+                    id: id,
                     title: title,
                     poster: poster,
                     price: price, 
@@ -152,12 +185,13 @@ metascore, year, imdbRating, price, mylist }) {
             <div className="infoContainer">
             <h2 id="transition-modal-title" className="movieTitle">{title}</h2>
             <div className="movieRatings">
-                <h5>{genre}</h5>
+                <h5>{maxGenre}</h5>
                 <h5>{year}</h5> 
                 <img src={ imdb_logo } alt="imdb" className="imdbLogo"/>
-                <h5>{imdbRating}</h5>
-                <h5>Metascore: {' '} { metascore }</h5>
-                <h5>Rated: {rated}</h5>
+                <h5>{ `${ imdbRating }` }</h5>
+                <img src={ mn_logo } alt="imdb" className="mnLogo"/>
+                <h5> { `${ mnRating }` }</h5>
+                <h5 id="ageRating">Rated: {rated}</h5>
             </div>
             <div className="movieCastCrew">
                 <h4><span>Director:</span> {director}</h4> 
@@ -184,7 +218,7 @@ metascore, year, imdbRating, price, mylist }) {
                       </ReviewModal>
                     </div>
                   ) : (
-                    <div className="buttonsContainer">
+                    <div className="buttonsContainerUser">
                     <button className="btnModalCart" onClick={addToCart}>
                         <div id="btnCartAdd">Add to cart</div> 
                         <div id="btnCartPrice">${price}</div></button>
@@ -193,7 +227,7 @@ metascore, year, imdbRating, price, mylist }) {
                       <button className="btnModalTrailer">Trailer</button>
                     </TrailerModal>
 
-                    <ReviewModal id={id}>
+                    <ReviewModal id={id} handleRating={handleRating}>
                       <button className="btnModalTrailer">Reviews</button>
                     </ReviewModal>
 
@@ -206,9 +240,9 @@ metascore, year, imdbRating, price, mylist }) {
                   <div className="rightSide">
                   {
                     myList ? (
-                      <span className="spanCheck"><img src={ check } id="checkIcon" onClick={handleMyList} /></span>
+                      <span className="spanCheck"><img src={ check } id="checkIcon" onClick={handleMyList}/></span>
                     ) : (
-                      <span className="spanPlus"><img src={ plus } id="plusIcon" onClick={handleMyList}/></span>
+                        <span className="spanPlus"><img src={ plus } id="plusIcon" onClick={handleMyList}/></span>
                     )
                   }
                 </div>
