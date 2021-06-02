@@ -56,11 +56,6 @@
   border-bottom: 2px solid rgba(128, 128, 128, 0.123);
 }
 
-.movieTitle.text-length-4 {
-  font-size: 1rem;
-  font-size: 3.5vw;
-}
-
 .movieRatings {
   display: inline;
   vertical-align: top;
@@ -80,6 +75,13 @@
 
 .imdbLogo {
   width: 40px;
+  height: 20px;
+  margin-right: 5px;
+  padding-bottom: 3px;
+}
+
+.mnLogo {
+  width: 30px;
   height: 20px;
   margin-right: 5px;
   padding-bottom: 3px;
@@ -105,12 +107,13 @@
 }
 
 .moviePlot {
-  min-height: 228px;
+  min-height: 233px;
   margin-top: 15px;
   font-size: 1em;
   font-weight: 500;
   overflow: hidden;
   text-overflow: ellipsis;
+  word-wrap: break-word;
   display: -webkit-box;
   -webkit-line-clamp: 12;
   -webkit-box-orient: vertical;
@@ -132,6 +135,14 @@
   justify-content: center;
   align-items: center;
   margin-top: 10px;
+}
+
+.buttonsContainerUser {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
 }
 
 .btnModalCart {
@@ -251,7 +262,7 @@
   font-weight: lighter;
   background: rgb(19, 19, 19);
   border: 1px solid rgb(29, 29, 29);
-  margin-top: 28px;
+  margin-top: 32px;
   margin-right: 30px;
   padding: 12px;
   border-radius: 50%;
@@ -264,7 +275,7 @@
   font-weight: lighter;
   background: rgb(19, 19, 19);
   border: 1px solid rgb(29, 29, 29);
-  margin-top: 28px;
+  margin-top: 32px;
   margin-right: 30px;
   padding: 12px;
   border-radius: 50%;
@@ -275,21 +286,21 @@
 }
 
 .spanPlus::after {
-  font-size: 15px;
+  position: absolute;
+  left: -10;
+  right: 0;
+  bottom: -52px;
+  font-size: 14px;
   font-weight: 100;
   content: "Add to My List";
-  align-items: center;
   letter-spacing: 1.42px;
+  text-align: center;
   height: 20px;
-  width: 120px;
-  padding: 10px 20px;
+  width: 110px;
+  padding: 4px 4px;
   background: white;
   color: black;
-  position: absolute;
-  left: -50;
-  right: 0;
-  bottom: -60px;
-  border-radius: 12px;
+  border-radius: 4px;
   opacity: 0;
   transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   transform: scaleX(0);
@@ -305,21 +316,21 @@
 }
 
 .spanCheck::after {
-  font-size: 15px;
+  position: absolute;
+  left: -10;
+  right: 0;
+  bottom: -52px;
+  font-size: 14px;
   font-weight: 100;
-  content: "Remove from My List";
-  align-items: center;
+  content: "Add to My List";
   letter-spacing: 1.42px;
+  text-align: center;
   height: 20px;
-  width: 170px;
-  padding: 10px 20px;
+  width: 110px;
+  padding: 4px 4px;
   background: white;
   color: black;
-  position: absolute;
-  left: -50;
-  right: 0;
-  bottom: -60px;
-  border-radius: 12px;
+  border-radius: 4px;
   opacity: 0;
   transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   transform: scaleX(0);
@@ -328,4 +339,246 @@
 .spanCheck:hover::after {
   transform: scaleX(1);
   opacity: 1;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .btnModalClose {
+    font-size: 1.5rem;
+  }
+
+  #modalContainer {
+    width: 100%;
+    display: flex;
+    overflow-x: hidden;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .movieContainer {
+    max-height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .modalImage {
+    height: 40%;
+    width: 40%;
+    padding-top: 10px;
+    border-radius: 4px;
+    object-fit: contain;
+  }
+
+  .infoContainer {
+    height: 10%;
+    width: 95%;
+  }
+
+  .movieTitle {
+    font-size: 1em;
+    letter-spacing: 1.42px;
+    margin: 0;
+  }
+
+  .movieRatings {
+    display: inline;
+    vertical-align: top;
+    font-size: 13px;
+    margin-top: 4px;
+    padding-bottom: 20px;
+    height: 3%;
+    width: 100%;
+    letter-spacing: 1.42px;
+  }
+
+  #ageRating {
+    display: none;
+  }
+
+  .imdbLogo {
+    width: 28px;
+    height: 22px;
+    margin-right: 5px;
+    padding-bottom: 8px;
+  }
+
+  .mnLogo {
+    width: 30px;
+    height: 22px;
+    margin-right: 5px;
+    padding-bottom: 8px;
+  }
+
+  .movieCastCrew {
+    display: flex;
+    flex-direction: column;
+    margin-top: -10px;
+    font-size: 11px;
+    vertical-align: top;
+    letter-spacing: 1.42px;
+  }
+
+  .movieCastCrew h4 {
+    margin: 0;
+    padding-top: 10px;
+    font-weight: 600;
+  }
+
+  .movieCastCrew span {
+    color: gray;
+    font-weight: 600;
+  }
+  .moviePlot {
+    min-height: 112px;
+    width: 95%;
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.123);
+  }
+
+  .bottomRow {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 80px;
+  }
+
+  .buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .buttonsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .buttonsContainerUser {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .btnModalCart {
+    min-width: 150px;
+    height: 40px;
+    border: 1px solid rgb(230, 150, 2);
+    border-radius: 6px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 9px;
+    padding: 5px 5px;
+    text-transform: uppercase;
+    display: inline-block;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+
+  #btnCartPrice {
+    max-width: 30px;
+    top: 0;
+    left: 20;
+    padding: 10px;
+    bottom: 0;
+    right: 0;
+  }
+
+  .btnModalTrailer {
+    min-width: 10%;
+    height: 45px;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: start;
+    background: rgb(19, 19, 19);
+    color: white;
+    border: 1px solid rgb(29, 29, 29);
+    border-radius: 4px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    padding: 5px 5px;
+    margin-left: -10px;
+    margin-right: -20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+
+  .btnModalTrailerLogin {
+    min-width: 10%;
+    height: 45px;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: start;
+    background: rgb(19, 19, 19);
+    color: white;
+    border: 1px solid rgb(29, 29, 29);
+    border-radius: 4px;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    padding: 5px 5px;
+    margin-left: -10px;
+    margin-right: -20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+
+  #plusIcon {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    font-weight: lighter;
+    background: rgb(19, 19, 19);
+    border: 1px solid rgb(29, 29, 29);
+    margin-top: 32px;
+    margin-left: 10px;
+    padding: 8px;
+    border-radius: 50%;
+  }
+
+  #checkIcon {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    font-weight: lighter;
+    background: rgb(19, 19, 19);
+    border: 1px solid rgb(29, 29, 29);
+    margin-top: 32px;
+    margin-left: 10px;
+    padding: 8px;
+    border-radius: 50%;
+  }
 }

@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ReviewModal({ children, id }) {
+export default function ReviewModal({ children, id, handleRating }) {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [reviews, setReviews] = useState([]);
@@ -30,10 +30,11 @@ export default function ReviewModal({ children, id }) {
 
   const handleClose = () => {
     setOpen(false);
+    handleRating();
   };
 
   const getReviews = () => {
-    console.log('started fetch');
+    //console.log('started fetch');
     const ref = db.collection('movies').doc(id).collection('reviews')
     ref.onSnapshot((snapshot) => {
       const tempItems = snapshot.docs.map((doc) => ({

@@ -231,7 +231,6 @@ function Row({ title, category, rowId, id }) {
                     director={movie.Director}
                     genre={movie.Genre}
                     rated={movie.Rated}
-                    metascore={movie.Metascore}
                     year={movie.Year}
                     imdbRating={movie.imdbRating}
                     price={19.99}

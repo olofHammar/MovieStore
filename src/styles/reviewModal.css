@@ -85,6 +85,30 @@
   transition: all 0.4s;
 }
 
+.btnAddReviewLogin {
+  width: 97%;
+  height: 50px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  margin-top: 10px;
+  margin-right: 195px;
+  background: orange;
+  color: white;
+  border: 1px solid rgb(230, 150, 2);
+  border-radius: 8px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
 #errorMsg {
   width: 100%;
   padding: 12px;

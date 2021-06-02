@@ -6,8 +6,9 @@ import { db } from '../firebase';
 import uuid from 'react-uuid';
 import '../styles/reviewModal.css';
 import { useSelector } from 'react-redux';
-import { getUserEmail } from '../features/userSlice';
+import { getUserEmail, getUserId } from '../features/userSlice';
 import TextField from '@material-ui/core/TextField';
+import LoginModal from '../components/LoginModal';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,8 +26,8 @@ export default function StarRating({ id }) {
   const [value, setValue] = useState(0);
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [errorMsg, setErrorMsg] = useState('');
   const userEmail = useSelector(getUserEmail);
+  const userId = useSelector(getUserId);
   const classes = useStyles();
 
   function handleReview() {
@@ -93,8 +94,15 @@ export default function StarRating({ id }) {
            variant="outlined"/>
 
         </form>
-
-        <button className="btnAddReview" onClick={handleReview}>ADD REVIEW</button>
+        {
+          userId ? (
+            <button className="btnAddReview" onClick={handleReview}>ADD REVIEW</button>
+          ) : (
+            <LoginModal>
+              <button className="btnAddReviewLogin">ADD REVIEW</button>
+            </LoginModal>
+          )
+        }
         <p id="errorMsg"></p>
     </div>
   )
