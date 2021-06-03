@@ -39,16 +39,14 @@ const DropdownLink = styled(Link)`
   }
 `;
 
-const SubMenu = ({ item, showSidebar }) => {
+const SubMenu = ({ item }) => {
   const [subnav, setSubnav] = useState(false);
 
   const showSubnav = () => setSubnav(!subnav);
 
   return (
     <>
-
-      <SidebarLink to={item.path} onClick={item.subNav && showSubnav || showSidebar}>
-
+      <SidebarLink to={item.path} onClick={item.subNav && showSubnav}>
         <div>
           {item.icon}
           <SidebarLabel>{item.title}</SidebarLabel>
@@ -60,7 +58,6 @@ const SubMenu = ({ item, showSidebar }) => {
             ? item.iconClosed
             : null}
         </div>
-        
       </SidebarLink>
       {subnav &&
         item.subNav.map((item, index) => {

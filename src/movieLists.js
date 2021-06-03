@@ -94,11 +94,11 @@ const animatedMovies = [
     "?t=toy+story+2&plot=full&apikey=38795606&=",
     "?t=toy+story+3&plot=full&apikey=38795606&=",
     "?t=toy+story+4&plot=full&apikey=38795606&=",
-    "?t=wall+e&plot=full&apikey=38795606&=",
     "?t=the+little+mermaid&plot=full&apikey=38795606&=",
     "?t=aladdin&plot=full&apikey=38795606&y=1992",
     "?t=bee+movie&plot=full&apikey=38795606&=",
     "?t=frozen&plot=full&apikey=38795606&=",
+    "?t=wall+e&plot=full&apikey=38795606&=",
     "?t=ninjago&plot=full&apikey=38795606&=",
     "?t=spirited+away&plot=full&apikey=38795606&=",
     "?t=shrek&plot=full&apikey=38795606&=",
@@ -151,6 +151,8 @@ const topfamilyMovies = [
 ]
 
 const adventuresMovies = [
+    "?t=up&plot=full&apikey=38795606&=",
+    "?t=treasure+planet&plot=full&apikey=38795606&=",
     "?t=tarzan&plot=full&apikey=38795606&=",
     "?t=soul&plot=full&apikey=38795606&=",
     "?t=spongebob&plot=full&apikey=38795606&=",
@@ -165,13 +167,20 @@ const adventuresMovies = [
 ]
 
 const newFamilyMovies = [
-    "?t=onward&plot=full&apikey=38795606&=",
-    "?t=home&plot=full&apikey=38795606&=",
+    "?t=scoob&plot=full&apikey=38795606&=",
+    "?t=out&plot=full&apikey=38795606&=",
     "?t=national+treasure&plot=full&apikey=38795606&=",
     "?t=Madagascar&plot=full&apikey=38795606&=",
     "?t=home+alone&plot=full&apikey=38795606&=",
     "?t=my+girl&plot=full&apikey=38795606&=",
     "?t=panda&plot=full&apikey=38795606&=",
+    "?t=canvas&plot=full&apikey=38795606&=",
+    "?t=the+spongebob+movie&plot=full&apikey=38795606&=",
+    "?t=come+away&plot=full&apikey=38795606&=",
+    "?t=wonder+park&plot=full&apikey=38795606&=",
+    "?t=lamp+life&plot=full&apikey=38795606&=",
+    "?t=jungle+beat+the+movie&plot=full&apikey=38795606&=",
+    "?t=magic+camp&plot=full&apikey=38795606&=",
     "?t=soul&plot=full&apikey=38795606&=",
     "?t=spongebob&plot=full&apikey=38795606&=",
     "?t=ninjago&plot=full&apikey=38795606&=",
@@ -203,6 +212,23 @@ const familyMovies = [
     "?t=narnia&plot=full&apikey=38795606&=",
     "?t=harry+potter&plot=full&apikey=38795606&=",
     "?t=mrs+doubtfire&plot=full&apikey=38795606&y=1993",
+]
+
+const sciFifamilyMovies = [
+    "?t=megamind&plot=full&apikey=38795606&=",
+    "?t=zathura&plot=full&apikey=38795606&=",
+    "?t=planet+51&plot=full&apikey=38795606&=",
+    "?t=rise+of+the+guardians&plot=full&apikey=38795606&=",
+    "?t=monsters+vs+aliens&plot=full&apikey=38795606&=",
+    "?t=lego+jurassic+world+the+indominus+escape&plot=full&apikey=38795606&=",
+    "?t=next+gen&plot=full&apikey=38795606&=",
+    "?t=big+hero+6&plot=full&apikey=38795606&=",
+    "?t=the+emoji+movie&plot=full&apikey=38795606&=",
+    "?t=wall+e&plot=full&apikey=38795606&=",
+    "?t=space+jam&plot=full&apikey=38795606&=",
+    "?t=astro+boy&plot=full&apikey=38795606&=",
+
+
 ]
 
 const horrorMovies = [
@@ -344,5 +370,6 @@ const mystery = [
 ]
 
 export default { topMovies, comedyMovies, actionMovies, documentayMovies, animatedMovies,
-                 dramaMovies, topfamilyMovies, familyMovies, horrorMovies, adventuresMovies, 
-                 newFamilyMovies, marvel, peterJackson, musicals, standUp, quentin, mystery };
+                dramaMovies, topfamilyMovies, familyMovies, horrorMovies, adventuresMovies, 
+                newFamilyMovies, marvel, peterJackson, musicals, standUp, quentin, mystery };
+

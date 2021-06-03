@@ -2,8 +2,11 @@
     display: flex;
     flex-direction: column;
     width: 100%; 
-    background: linear-gradient(to right, #9c27b0,#8ecdff);
+    background: linear-gradient(-45deg, #e6ee13, #c21aff,#14d8c8, #1df521);
+    background-size: 400% 400%;
+    position: relative;
     overflow-x: hidden;
+    animation: change 14s ease-in-out infinite;
   }
 
   a {
@@ -15,5 +18,20 @@ a:hover {
     color:#7513de;
     text-decoration:none; 
     cursor:pointer;  
+}
+
+@keyframes change{
+    0%{
+        background-position: 100% 100%;
+    }
+
+    50%{
+        background-position: 100% 0%;
+    }
+    100%{
+        background-position: 100% 100%;
+    }
+ 
+
 }
   
