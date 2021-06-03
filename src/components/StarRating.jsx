@@ -8,7 +8,7 @@ import '../styles/reviewModal.css';
 import { useSelector } from 'react-redux';
 import { getUserEmail, getUserId } from '../features/userSlice';
 import TextField from '@material-ui/core/TextField';
-import LoginModal from '../components/LoginModal';
+import LoginModal from '../modals/LoginModal';
 
 const useStyles = makeStyles((theme) => ({
   root: {

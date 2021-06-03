@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import '../styles/myList.css';
 import api from '../api';
-import ContentModal from '../components/ContentModal';
+import ContentModal from '../modals/ContentModal';
 import { useSelector } from 'react-redux';
 import { getUserId } from '../features/userSlice';
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import api from '../api';
-import ContentModal from './ContentModal';
+import ContentModal from '../modals/ContentModal';
 import '../styles/collections.css';
 import { useParams } from 'react-router-dom';
 import movieLists from '../movieLists';
@@ -71,7 +71,6 @@ function Collections() {
     const sortByPopularity = () => {
         setSorted(true);
         setMovies([...movies].sort((a, b) => b.imdbRating - a.imdbRating));
-        console.log('sorted');
     };
 
     function sortByTitle() {

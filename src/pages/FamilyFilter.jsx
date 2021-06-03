@@ -1,10 +1,10 @@
 import React from 'react'
 import '../styles/familyfilter.css';
-import Row from './Row';
+import Row from '../components/reuseableComponents/Row';
 import movieLists from '../movieLists';
 import '../styles/home.css';
-import ImgSliderFamily from './ImgSliderFamily';
-import RowFamily from './RowFamily';
+import ImgSliderFamily from '../components/reuseableComponents/ImgSliderFamily';
+import RowFamily from '../components/reuseableComponents/RowFamily';
 
 
 function Family() {
@@ -32,7 +32,7 @@ function Family() {
              category={ movieLists.familyMovies }
              rowId="rowSeven"
              id="familyMovies"/>
-              <Row title="Adventures Movies" 
+        <Row title="Adventures Movies" 
              category={ movieLists.adventuresMovies }
              rowId="rowSeven"
              id="adventuresMovies"/>

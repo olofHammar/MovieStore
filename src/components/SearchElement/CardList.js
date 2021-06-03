@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import ContentModal from "../ContentModal"
 import Card from "./Card"
 
 function CardList({ results,  }) {

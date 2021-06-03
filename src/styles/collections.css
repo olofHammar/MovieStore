@@ -33,7 +33,7 @@
   font-size: 1.8rem;
   margin-bottom: 25px;
   text-transform: capitalize;
-  z-index: 20;
+  z-index: 40;
 }
 
 .collectionsSortContainer {
@@ -78,7 +78,7 @@
 .collectionsImage {
   height: 95%;
   object-fit: contain;
-  margin-bottom: 190px;
+  margin-bottom: 200px;
   margin-right: -67px;
   z-index: 1;
 }

@@ -1,7 +1,7 @@
 import React from 'react'
-import image from '../img/marvel_logo.jpeg';
-import '../styles/rowMarvel.css';
-import c_image from '../img/mn_collection.png';
+import image from '../../img/marvel_logo.jpeg';
+import '../../styles/rowMarvel.css';
+import c_image from '../../img/mn_collection.png';
 
 function RowMarvel() {
     return (

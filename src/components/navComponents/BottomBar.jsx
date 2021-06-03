@@ -1,8 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-import image from '../img/m_logo.png';
-import { Link } from 'react-router-dom';
-
+import React from "react"
+import styled from "styled-components"
+import image from "../../img/m_logo.png"
+import { Link } from "react-router-dom"
 
 const Nav = styled.div`
   background: linear-gradient(to top, rgb(11, 11, 17), #15171c);
@@ -14,7 +13,7 @@ const Nav = styled.div`
   align-items: center;
   width: 100%;
   padding-right: 40px;
-`;
+`
 
 const LogoImage = styled.img`
   height: 55px;
@@ -35,12 +34,11 @@ const NavTitle = styled.h4`
   cursor: pointer;
 
   span {
-
     position: relative;
 
     &:after {
       content: "";
-      height: 2px; 
+      height: 2px;
       background: white;
       position: absolute;
       left: 0;
@@ -58,27 +56,30 @@ const NavTitle = styled.h4`
       opacity: 1;
     }
   }
-
 `
 
-const BottomBar = ({handleLogout}) => {
-
+const BottomBar = ({ handleLogout }) => {
   return (
-    <Nav> 
-      <LogoImage src={image} /> 
+    <Nav>
+      <LogoImage src={image} />
 
-      <Link to="family" style={{ textDecoration: 'none' }}>
-      <NavTitle><span>FAMILY</span></NavTitle> 
+      <Link to="family" style={{ textDecoration: "none" }}>
+        <NavTitle>
+          <span>FAMILY</span>
+        </NavTitle>
       </Link>
 
-       <Link to='/myList' style={{ textDecoration: 'none' }}>
-        <NavTitle><span>MY LIST</span></NavTitle>
+      <Link to="/myList" style={{ textDecoration: "none" }}>
+        <NavTitle>
+          <span>MY LIST</span>
+        </NavTitle>
       </Link>
 
-      <NavTitle><span>COMING SOON</span></NavTitle>
-
+      <NavTitle>
+        <span>COMING SOON</span>
+      </NavTitle>
     </Nav>
-  );
-};
+  )
+}
 
-export default BottomBar;
+export default BottomBar

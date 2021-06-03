@@ -10,8 +10,8 @@ import { db } from '../firebase';
 import { useSelector } from 'react-redux';
 import { getUserId } from '../features/userSlice';
 import LoginModal from './LoginModal';
-import TrailerModal from './TrailerModal';
-import ReviewModal from './ReviewModal';
+import TrailerModal from '../modals/TrailerModal';
+import ReviewModal from '../modals/ReviewModal';
 import check from '../img/v_white.png';
 import plus from '../img/add_white.png';
 
@@ -85,6 +85,7 @@ export default function ContentModal({ children, id, title, poster, plot, cast, 
   }
 
   const handleRating = () => {
+
     let tempRating = 0;
     let count = 0;
     db.collection('movies').doc(id).collection('reviews').onSnapshot((snapshot) => {

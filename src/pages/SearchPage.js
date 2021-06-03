@@ -18,6 +18,7 @@ function SearchPage() {
       });
       setResults(movieResults);
       setStartedSearch(true);
+      console.log(movieResults)
     };
 
     useEffect(() => {

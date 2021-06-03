@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import api from '../api';
-import '../styles/row.css';
-import ContentModal from './ContentModal';
+import api from '../../api';
+import '../../styles/row.css';
+import ContentModal from '../../modals/ContentModal';
 
 function Row({ title, category, rowId, id }) {
     const [movies, setMovies] = useState([]);
