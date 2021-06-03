@@ -3,17 +3,14 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import batman from '../img/slider_batman.png';
 import { Link } from 'react-router-dom';
 import jackson from '../img/slider_jackson.jpg';
 import musical from '../img/slider_musical.png';
 import stand_up from '../img/slider_stand_up.png';
-import { useDispatch } from 'react-redux';
+import tarantino from '../img/slider_tarantino.png';
 import BottomBar from '../components/BottomBar';
 
 function ImgSlider() {
-
-    const dispatch = useDispatch();
 
     let settings  = {
         dots: true,
@@ -27,14 +24,9 @@ function ImgSlider() {
     return (
         <CarouselContainer>
         <Carousel {...settings }>
-            <Wrap>
-                <Link to='collections/batman'>
-                    <img src={ batman }/>
-                </Link>
-            </Wrap>
 
             <Wrap >
-                <Link to='collections/peter_jackson'>
+                <Link to='collections/jackson'>
                     <img src={ jackson }/>
                 </Link>
             </Wrap>
@@ -42,6 +34,12 @@ function ImgSlider() {
             <Wrap>
                 <Link to='collections/musicals'>
                     <img src={ musical }/>
+                </Link>
+            </Wrap>
+
+            <Wrap>
+                <Link to='collections/tarantino'>
+                    <img src={ tarantino }/>
                 </Link>
             </Wrap>
 
@@ -104,6 +102,7 @@ const Wrap = styled.div`
 
     img {
         min-height:190px;
+        max-height: 379px;
         border: 1.5px solid rgba(249, 249, 249, 0.2);
         border-radius: 4px;
         width: 100%;

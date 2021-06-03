@@ -10,12 +10,9 @@ import './App.css';
 import Sidebar from './components/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Family from './components/FamilyFilter';
-import CardList from './components/SearchElement/CardList'
-import SearchBar from './components/SearchElement/SearchBar'
 import SearchPage from './components/SearchPage';
-
 import { useDispatch, useSelector} from 'react-redux';
-import { setCurrentUser, setUserLogOutState, getUserId } from './features/userSlice'; 
+import { setUserLogOutState, getUserId } from './features/userSlice'; 
 
 
 
@@ -47,7 +44,6 @@ function App() {
         data: doc.data()
       })
       )
-
       setCartItems(tempItems);
     })
   }
@@ -81,7 +77,7 @@ function App() {
           <Switch>
 
             <Route path="/cart">
-              <Cart />
+              <Cart cartItems={ cartItems } />
             </Route>
     
             <Route exact path="/">
@@ -111,7 +107,6 @@ function App() {
 
             <Route path="/myList">
               <MyList myList={ myList } />
-
             </Route>
 
          </Switch>

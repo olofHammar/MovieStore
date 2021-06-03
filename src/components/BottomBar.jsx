@@ -26,7 +26,7 @@ const NavTitle = styled.h4`
   width: 220px;
   height: 55px;
   justify-content: center;
-  align-items; center;
+  align-items: center;
   text-align: center;
   color: white;
   padding: 15px 10px;
@@ -68,14 +68,14 @@ const BottomBar = ({handleLogout}) => {
       <LogoImage src={image} /> 
 
       <Link to="family" style={{ textDecoration: 'none' }}>
-      <NavTitle>FAMILY</NavTitle> 
+      <NavTitle><span>FAMILY</span></NavTitle> 
       </Link>
+
        <Link to='/myList' style={{ textDecoration: 'none' }}>
         <NavTitle><span>MY LIST</span></NavTitle>
       </Link>
 
-      <NavTitle>COMING SOON</NavTitle>
-      <NavTitle>MESSAGE BOARD</NavTitle>
+      <NavTitle><span>COMING SOON</span></NavTitle>
 
     </Nav>
   );
