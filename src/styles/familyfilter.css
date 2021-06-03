@@ -5,6 +5,7 @@
     background: linear-gradient(-45deg, #e6ee13, #c21aff,#14d8c8, #1df521);
     background-size: 400% 400%;
     position: relative;
+    overflow-x: hidden;
     animation: change 14s ease-in-out infinite;
   }
 
