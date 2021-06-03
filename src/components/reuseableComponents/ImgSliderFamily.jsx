@@ -3,17 +3,17 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import disney from '../img/disney.png';
-import frozen from '../img/frozen.png';
-import toystory from '../img/toystory.png';
-import dreamworks from '../img/dreamworks.png';
-import turbo from '../img/turbo.png';
-import trolls from '../img/trolls.png';
-import pixar from '../img/pixar.png';
-import walle from '../img/walle.png';
-import up from '../img/up.png';
+import disney from '../../img/disney.png';
+import frozen from '../../img/frozen.png';
+import toystory from '../../img/toystory.png';
+import dreamworks from '../../img/dreamworks.png';
+import turbo from '../../img/turbo.png';
+import trolls from '../../img/trolls.png';
+import pixar from '../../img/pixar.png';
+import walle from '../../img/walle.png';
+import up from '../../img/up.png';
 import { useDispatch } from 'react-redux';
-import BottomBar from '../components/BottomBar';
+import BottomBar from '../navComponents/BottomBar';
 
 function ImgSliderFamily() {
 

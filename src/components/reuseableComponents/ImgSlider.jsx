@@ -4,11 +4,11 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from 'react-router-dom';
-import jackson from '../img/slider_jackson.jpg';
-import musical from '../img/slider_musical.png';
-import stand_up from '../img/slider_stand_up.png';
-import tarantino from '../img/slider_tarantino.png';
-import BottomBar from '../components/BottomBar';
+import jackson from '../../img/slider_jackson.jpg';
+import musical from '../../img/slider_musical.png';
+import stand_up from '../../img/slider_stand_up.png';
+import tarantino from '../../img/slider_tarantino.png';
+import BottomBar from '../navComponents/BottomBar';
 
 function ImgSlider() {
 

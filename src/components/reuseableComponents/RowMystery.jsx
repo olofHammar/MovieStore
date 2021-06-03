@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/rowMystery.css';
+import '../../styles/rowMystery.css';
 
 
 function RowMystery() {

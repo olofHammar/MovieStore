@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { db, auth } from './firebase';
-import Home from './components/Home';
-import Cart from './components/Cart';
-import Support from './components/Support';
-import Collections from './components/Collections';
-import MyList from './components/MyList';
+import Home from './pages/Home';
+import Cart from './pages/Cart';
+import Collections from './pages/Collections';
+import MyList from './pages/MyList';
 import './App.css';
-import Sidebar from './components/Sidebar';
+import Sidebar from './components/navComponents/Sidebar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Family from './components/FamilyFilter';
-import SearchPage from './components/SearchPage';
+import Family from './pages/FamilyFilter';
+import SearchPage from './pages/SearchPage';
 import { useDispatch, useSelector} from 'react-redux';
 import { setUserLogOutState, getUserId } from './features/userSlice'; 
 
@@ -90,10 +89,6 @@ function App() {
 
             <Route path="/SearchPage">
               <SearchPage/>
-            </Route>
-            
-            <Route path='/Support'>
-              <Support />
             </Route>
 
             <Route path= '/collections/:title'>

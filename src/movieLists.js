@@ -371,5 +371,5 @@ const mystery = [
 
 export default { topMovies, comedyMovies, actionMovies, documentayMovies, animatedMovies,
                 dramaMovies, topfamilyMovies, familyMovies, horrorMovies, adventuresMovies, 
-                newFamilyMovies, marvel, peterJackson, musicals, standUp, quentin, mystery };
+                newFamilyMovies, sciFifamilyMovies, marvel, peterJackson, musicals, standUp, quentin, mystery };
 

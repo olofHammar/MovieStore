@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import Row from './Row';
+import Row from '../components/reuseableComponents/Row';
 import movieLists from '../movieLists';
 import '../styles/home.css';
-import ImgSlider from './ImgSlider';
-import RowMarvel from './RowMarvel';
-import RowMystery from './RowMystery';
+import ImgSlider from '../components/reuseableComponents/ImgSlider';
+import RowMarvel from '../components/reuseableComponents/RowMarvel';
+import RowMystery from '../components/reuseableComponents/RowMystery';
 
 function Home() {
 

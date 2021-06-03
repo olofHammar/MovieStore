@@ -27,6 +27,7 @@ export default function Card({ movie }) {
             
         } else {
                 cartItem.set({
+                    id: movie.imdbID,
                     title: movie.Title,
                     poster: movie.Poster,
                     price: price, 
