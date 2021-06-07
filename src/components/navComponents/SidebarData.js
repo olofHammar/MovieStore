@@ -27,7 +27,7 @@ export const SidebarData  = [
   {
     title: 'Family',
     path: '/family',
-    icon: <FaIcons.FaCartPlus />
+    icon: <FaIcons.FaUsers />
   },
 
   {
@@ -39,7 +39,7 @@ export const SidebarData  = [
   {
     title: 'Cart',
     path: '/Cart',
-    icon: <IoIcons.IoIosPaper />,
+    icon: <FaIcons.FaCartPlus/>,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
   }
