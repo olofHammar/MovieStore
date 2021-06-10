@@ -1,15 +1,15 @@
-import React, { useState } from "react"
+import React from "react"
 import Card from "./Card"
 
-function CardList({ results,  }) {
-
-  const [exists, setExists] = useState(false);
+function CardList({ results }) {
+  //const [exists, setExists] = useState(false);
   let data = []
 
   if (results.data) {
     data = results.data.Search || []
   }
 
+  /*
   function checkImage(image) {
     setExists(false);
 
@@ -17,17 +17,18 @@ function CardList({ results,  }) {
       setExists(true);
     }
     image.onerror = function() {
-     setExists(false);
+      setExists(false);
     }
   }
+  */
 
   return (
     <div className="rowResult">
-      {data.map((movie) => (
-        <Card movie={movie} />
+      {data.map((movie, i) => (
+        <Card movie={movie} key={i} />
       ))}
     </div>
   )
 }
 
-export default CardList;
+export default CardList

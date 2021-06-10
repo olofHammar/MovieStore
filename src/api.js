@@ -1,7 +1,7 @@
-import axios from 'axios'; 
+import axios from "axios"
 
-const instance = axios.create ({
-    baseURL: "http://www.omdbapi.com/"
-});
+const instance = axios.create({
+  baseURL: "http://www.omdbapi.com/",
+})
 
-export default instance;
+export default instance

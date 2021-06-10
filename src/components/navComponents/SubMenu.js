@@ -1,28 +1,33 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import React, { useState } from "react"
+import { Link } from "react-router-dom"
+import styled from "styled-components"
 
 const SidebarLink = styled(Link)`
   display: flex;
   color: #e1e9fc;
   justify-content: space-between;
-  align-items: center;
-  padding: 12px;
+  align-items: flex-end;
+  padding: 20px;
   list-style: none;
   height: 50px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.2rem;
   &:hover {
     background: #252831;
     color: white;
     border-left: 4px solid #632ce4;
     cursor: pointer;
   }
-`;
+
+  div {
+    display: flex;
+    align-items: center;
+  }
+`
 
 const SidebarLabel = styled.span`
   margin-left: 16px;
-`;
+`
 
 const DropdownLink = styled(Link)`
   background: #414757;
@@ -37,16 +42,19 @@ const DropdownLink = styled(Link)`
     background: #632ce4;
     cursor: pointer;
   }
-`;
+`
 
 const SubMenu = ({ item, showSidebar }) => {
-  const [subnav, setSubnav] = useState(false);
+  const [subnav, setSubnav] = useState(false)
 
-  const showSubnav = () => setSubnav(!subnav);
+  const showSubnav = () => setSubnav(!subnav)
 
   return (
     <>
-      <SidebarLink to={item.path} onClick={item.subNav && showSubnav || showSidebar}>
+      <SidebarLink
+        to={item.path}
+        onClick={(item.subNav && showSubnav) || showSidebar}
+      >
         <div>
           {item.icon}
           <SidebarLabel>{item.title}</SidebarLabel>
@@ -66,10 +74,10 @@ const SubMenu = ({ item, showSidebar }) => {
               {item.icon}
               <SidebarLabel>{item.title}</SidebarLabel>
             </DropdownLink>
-          );
+          )
         })}
     </>
-  );
-};
+  )
+}
 
-export default SubMenu;
+export default SubMenu
