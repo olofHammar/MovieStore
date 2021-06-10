@@ -32,10 +32,10 @@ function Cart({ cartItems }) {
   return (
     <div className="cartContainer">
       <div className="cartTotal">
-        <h1> Cart Total</h1>
+        <h1 className="cartTotalHeader"> Cart Total</h1>
         <div>
-          <h4>Total movies: {getCount()}</h4>
-          <h4>Total price: <NumberFormat value={getTotalPrice()} displayType={'text'} thousandSeparator={true} prefix={'$'} /></h4>
+          <h4 className="cartItemPrice">Total movies: {getCount()}</h4>
+          <h4 className="cartItemPrice">Total price: <NumberFormat value={getTotalPrice()} displayType={'text'} thousandSeparator={true} prefix={'$'} /></h4>
         </div>
         <button className="btnCartCheckOut">Check out </button>
       </div>
@@ -47,8 +47,8 @@ function Cart({ cartItems }) {
             <img src={item.data.poster} alt="" className="cartItemPoster" />
 
             <div className="cartItemInfo">
-              <h2>{item.data.title}</h2>
-              <h4>{`Price: $${item.data.price}`}</h4>
+              <h2 className="cartItemTitle">{item.data.title}</h2>
+              <h4 className="cartItemPrice">{`Price: $${item.data.price}`}</h4>
             </div>
             <div className="cartItemRight">
               <DeleteAlert userId={userId} id={item.data.id} />

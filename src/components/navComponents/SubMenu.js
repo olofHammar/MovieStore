@@ -11,7 +11,7 @@ const SidebarLink = styled(Link)`
   list-style: none;
   height: 50px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.2rem;
   &:hover {
     background: #252831;
     color: white;

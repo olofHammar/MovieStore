@@ -142,26 +142,37 @@
 
 @media only screen and (max-width: 768px){
 
-  .h2{
-      font-size: 0.5em;
+  .cartItemTitle{
+      font-size: 1.2rem;
       font-weight: bold;
   }
+
+  .cartItemPrice{
+    font-size: 0.8rem;
+    flex-direction: column;
+    padding: 5px;
+
+  }
+  .cartTotalHeader{
+    font: 1.0rem;
+  }
+
   .cartContainer {
-    position: relative;
+    flex-direction: column;
+    position: absolute;
     display: flex;
-    padding: 40px;
-    margin: 0 auto;
+    padding: 10px;
+    margin: 0;
     background: linear-gradient(to top, rgb(11, 11, 17), #15171c);
-    height: 105%;
-    min-height: 100vh;
     width: 100%;
     letter-spacing: 1.43px;
     overflow-x: scroll;
   }
   
   .cartTitle {
-    margin-bottom: 10px;
-    margin-right: 820px;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-right: 10px;
   }
   
   .cartItems {
@@ -175,18 +186,18 @@
   .cartItem {
     display: flex;
     height: 200px;
-    width: 65%;
+    width: 100%;
     background: rgb(25, 25, 31);
-    padding: 20px;
+    padding: 10px;
     border: 1px solid rgb(49, 49, 49);
     border-radius: 4px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     margin-top: 10px;
-    margin-right: 10px;
+    margin-right: 0px;
   }
   
   .cartItemPoster {
-    height: 80%;
+    height: 90%;
     object-fit: contain;
     border: 1px solid gray;
     border-top-left-radius: 4px;
@@ -197,24 +208,26 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items:flex-end;
   }
   
   .cartItemInfo {
-    min-width: 60%;
+    min-width: 48%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    margin-left: 30px;
-    padding-top: 8px;
+    justify-content: start;
+    margin-left: 5px;
+    padding-top: 0px;
     padding-bottom: 4px;
   }
   
   .cartItemDeleteIcon {
-    font-size: 0.9rem;
+    font-size: 2rem;
     cursor: pointer;
     margin-top: 4px;
+    margin-left: 5px;
   }
+  
   
   .cartItemDeleteIcon:hover {
     color: rgb(129, 129, 129);
@@ -223,25 +236,25 @@
   .cartTotal {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-start;
+    justify-content: center;
     text-align: start;
-    width: 20%;
-    height: 450px;
-    background: rgb(25, 25, 31);
+    align-items: center;
+    height: 200px;
+    width: 100%;
+    background: linear-gradient(to top, rgb(11, 11, 17), #15171c);
     border: 1px solid rgb(49, 49, 49);
-    border-top-right-radius: 700px;
-    border-bottom-right-radius: 700px;
     padding-left: 12px;
-    padding-bottom: 80px;
-    padding-top: 80px;
-    margin-left: -44px;
-    margin-top: 70px;
+    padding-bottom: 10px;
+    border-radius: 12px;
+    padding-top: 0px;
+    margin: 0px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
   }
   
   .btnCartCheckOut {
-    width: 70%;
-    height: 50px;
+    width: 120px;
+    height: 40px;
     position: relative;
     text-align: center;
     display: flex;
@@ -252,7 +265,7 @@
     border: none;
     border-radius: 8px;
     font-family: "Josefin Sans", sans-serif;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 900;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -262,6 +275,7 @@
     -moz-transition: all 0.4s;
     transition: all 0.4s;
     z-index: 0;
+    
   }
   
   /*  ALERT DIALOG */
