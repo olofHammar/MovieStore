@@ -13,11 +13,19 @@ const Nav = styled.div`
   align-items: center;
   width: 100%;
   padding-right: 40px;
+
+  @media (max-width: 768px) {
+    height: 50px;
+  }
 `
 
 const LogoImage = styled.img`
   height: 55px;
   padding-left: 35px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 const NavTitle = styled.h4`
@@ -56,6 +64,13 @@ const NavTitle = styled.h4`
       opacity: 1;
     }
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: space-evenly;
+    font-size: 12px;
+    margin-left: 9px;
+  }
 `
 
 const BottomBar = ({ handleLogout }) => {
@@ -63,7 +78,7 @@ const BottomBar = ({ handleLogout }) => {
     <Nav>
       <LogoImage src={image} />
 
-      <Link to="family" style={{ textDecoration: "none" }}>
+      <Link to="/family" style={{ textDecoration: "none" }}>
         <NavTitle>
           <span>FAMILY</span>
         </NavTitle>
@@ -75,9 +90,11 @@ const BottomBar = ({ handleLogout }) => {
         </NavTitle>
       </Link>
 
-      <NavTitle>
-        <span>COMING SOON</span>
-      </NavTitle>
+      <Link to="/collections/coming_soon" style={{ textDecoration: "none" }}>
+        <NavTitle>
+          <span>COMING SOON</span>
+        </NavTitle>
+      </Link>
     </Nav>
   )
 }
