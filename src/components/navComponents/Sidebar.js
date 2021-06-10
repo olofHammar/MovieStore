@@ -54,7 +54,7 @@ const NavIcon = styled(Link)`
 `
 
 const NavIconSignIn = styled.div`
-  margin-top: 290px;
+  margin-top: 285px;
   font-size: 20px;
   height: 80px;
   width: 250px;
@@ -69,6 +69,10 @@ const NavIconSignIn = styled.div`
     border-left: 4px solid #632ce4;
     cursor: pointer;
   }
+
+  @media (max-width: 768px) {
+    margin-top: 50%;
+  }
 `
 
 const NavIconSignInText = styled.p`
@@ -76,9 +80,8 @@ const NavIconSignInText = styled.p`
   margin-left: 13px;
 `
 
-
 const NavIconSignOut = styled(Link)`
-  margin-top: 80%;
+  margin-top: 290px;
 
   padding-left: 20px;
   font-size: 20px;
@@ -95,10 +98,11 @@ const NavIconSignOut = styled(Link)`
     border-left: 4px solid #632ce4;
     cursor: pointer;
   }
+
+  @media (max-width: 768px) {
+    margin-top: 50%;
+  }
 `
-
-
-
 
 const NavIconSignOutText = styled.p`
   display: flex;
@@ -148,7 +152,6 @@ const InfoContainerSignIn = styled.div`
   letter-spacing: 1.43px;
   margin-bottom: 15px;
   margin-left: -10px;
-  margin-bottom: 25px;
   span {
     font-size: 0.8rem;
   }
@@ -194,7 +197,7 @@ function Sidebar({ handleLogout, cartItems }) {
             })}
 
             {userId ? (
-              <NavIconSignOut onClick={handleLogout}>
+              <NavIconSignOut onClick={handleLogout} to="/">
                 <Container>
                   <FaIcons.FaSignOutAlt />
                   <NavIconSignOutText>Sign out</NavIconSignOutText>
@@ -213,6 +216,8 @@ function Sidebar({ handleLogout, cartItems }) {
           </SidebarWrap>
         </SidebarNav>
       </IconContext.Provider>
+
+
       {userId ? (
         <CartIconContainer to="/">
           <FaIcons.FaUser />
