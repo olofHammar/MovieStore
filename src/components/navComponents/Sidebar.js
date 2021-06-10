@@ -221,7 +221,7 @@ function Sidebar({ handleLogout, cartItems }) {
       {userId ? (
         <CartIconContainer to="/">
           <FaIcons.FaUser />
-          <InfoContainer onClick={handleLogout}>
+          <InfoContainer >
             <span>ACCOUNT</span>
             <h4>{userEmail}</h4>
           </InfoContainer>
