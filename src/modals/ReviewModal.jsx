@@ -31,7 +31,7 @@ export default function ReviewModal({ children, id, handleRating }) {
 
   const handleClose = () => {
     setOpen(false)
-    
+
     if (userId) {
       handleRating()
     }
@@ -108,8 +108,8 @@ export default function ReviewModal({ children, id, handleRating }) {
             </div>
             <div className="reviewsContainer" id="ic">
               <h1 className="reviewsContainerTitle">User Reviews</h1>
-              {reviews.map((r) => (
-                <div className="reviewContainer">
+              {reviews.map((r, i) => (
+                <div className="reviewContainer" key={i}>
                   <div className="topRow">
                     <h2>{r.review.title}</h2>
                     <p>⭐</p>
