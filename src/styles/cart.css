@@ -11,6 +11,18 @@
   overflow-x: scroll;
 }
 
+.cartSignInContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 40px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 20px;
+  letter-spacing: 1.43px;
+}
+
 .cartTitle {
   margin-bottom: 10px;
   margin-right: 820px;
@@ -141,17 +153,6 @@
 
 #btnDeleteAlert:hover {
   background: rgb(40, 40, 49);
-}
-
-.cartSignInContainer {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  margin-top: 40px;
-  font-size: 1.5rem;
-  font-weight: 700;
-  padding: 20px;
-  letter-spacing: 1.43px;
 }
 
 /*  ALERT CHECKOUT */
