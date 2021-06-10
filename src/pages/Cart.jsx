@@ -78,6 +78,8 @@ function Cart({ cartItems }) {
               <Quantity quantity={item.data.quantity} id={item.data.id} />
             </div>
 
+            </div>
+            ))}
           </div>
         </>
       ) : (
