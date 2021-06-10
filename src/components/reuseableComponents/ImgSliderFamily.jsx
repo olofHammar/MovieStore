@@ -13,7 +13,7 @@ import pixar from '../../img/pixar.png';
 import walle from '../../img/walle.png';
 import up from '../../img/up.png';
 import { useDispatch } from 'react-redux';
-import BottomBar from '../navComponents/BottomBar';
+import FamilyBottomBar from '../navComponents/FamilyBottomBar';
 
 function ImgSliderFamily() {
 
@@ -85,7 +85,7 @@ function ImgSliderFamily() {
 
 
         </Carousel>
-        <BottomBar />
+        < FamilyBottomBar />
         </CarouselContainer>
     )
 }
