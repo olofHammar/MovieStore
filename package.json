@@ -1,6 +1,6 @@
 {
   "name": "moviestore",
-  "homepage": "https://olofhammar.github.io/MovieStore/",
+  "homepage": "https://olofhammar.github.io/MovieStore",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
