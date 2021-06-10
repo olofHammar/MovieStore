@@ -76,8 +76,10 @@ const NavIconSignInText = styled.p`
   margin-left: 13px;
 `
 
-const NavIconSignOut = styled.div`
-  margin-top: 295px;
+
+const NavIconSignOut = styled(Link)`
+  margin-top: 80%;
+
   padding-left: 20px;
   font-size: 20px;
   height: 80px;
@@ -94,6 +96,9 @@ const NavIconSignOut = styled.div`
     cursor: pointer;
   }
 `
+
+
+
 
 const NavIconSignOutText = styled.p`
   display: flex;
