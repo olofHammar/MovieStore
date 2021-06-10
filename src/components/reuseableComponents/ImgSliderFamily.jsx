@@ -13,7 +13,7 @@ import pixar from "../../img/pixar.png"
 import walle from "../../img/walle.png"
 import up from "../../img/up.png"
 import { useDispatch } from "react-redux"
-import BottomBar from "../navComponents/BottomBar"
+import FamilyBottomBar from "../navComponents/FamilyBottomBar"
 
 function ImgSliderFamily() {
   let settings = {
@@ -64,7 +64,7 @@ function ImgSliderFamily() {
           <img src={up} alt="Up" />
         </Wrap>
       </Carousel>
-      <BottomBar />
+      <FamilyBottomBar />
     </CarouselContainer>
   )
 }
@@ -81,22 +81,18 @@ const Carousel = styled(Slider)`
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 0 30px;
-
   &:after {
     background: #15171c;
   }
-
   ul li button {
     &:before {
       font-size: 10px;
       color: rgb(150, 158, 171);
     }
   }
-
   li.slick-active button::before {
     color: white;
   }
-
   .slick-list {
     overflow: visible;
   }
@@ -106,14 +102,12 @@ const Wrap = styled.div`
   cursor: pointer;
   padding: 0 10px;
   background-color: #15171c;
-
   &:active,
   &:focus {
     outline: 0;
     border: none;
     -moz-outline-style: none;
   }
-
   img {
     min-height: 190px;
     border-radius: 4px;

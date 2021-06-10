@@ -74,7 +74,7 @@ const familyBottomBar = ({ handleLogout }) => {
           <span>MY LIST</span>
         </NavTitle>
       </Link>
-
+      
       <NavTitle>
         <span>COMING SOON</span>
       </NavTitle>
