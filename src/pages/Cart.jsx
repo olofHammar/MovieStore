@@ -32,13 +32,14 @@ function Cart({ cartItems }) {
 
   return (
     <div className="cartContainer">
+
       {userId ? (
         <>
           <div className="cartTotal">
             <h1> Cart Total</h1>
             <div>
-              <h4>Total movies: {getCount()}</h4>
-              <h4>
+              <h4 className="cartItemPrice">Total movies: {getCount()}</h4>
+              <h4 className="cartItemPrice">
                 Total price:{" "}
                 <NumberFormat
                   value={getTotalPrice()}
@@ -50,6 +51,7 @@ function Cart({ cartItems }) {
             </div>
             <CheckoutAlert className="btnCartCheckOut" cartItems={cartItems} />
           </div>
+
 
           <div className="cartItems">
             <h1 className="cartTitle"> My Cart </h1>
@@ -66,15 +68,17 @@ function Cart({ cartItems }) {
               <div className="cartItem" key={i}>
                 <img src={item.data.poster} alt="" className="cartItemPoster" />
 
-                <div className="cartItemInfo">
-                  <h2>{item.data.title}</h2>
-                  <h4>{`Price: $${item.data.price}`}</h4>
-                </div>
-                <div className="cartItemRight">
-                  <DeleteAlert userId={userId} id={item.data.id} />
-                  <Quantity quantity={item.data.quantity} id={item.data.id} />
-                </div>
-              </div>
+
+            <div className="cartItemInfo">
+              <h2 className="cartItemTitle">{item.data.title}</h2>
+              <h4 className="cartItemPrice">{`Price: $${item.data.price}`}</h4>
+            </div>
+            <div className="cartItemRight">
+              <DeleteAlert userId={userId} id={item.data.id} />
+              <Quantity quantity={item.data.quantity} id={item.data.id} />
+            </div>
+
+            </div>
             ))}
           </div>
         </>

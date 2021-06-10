@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+
 .bodyContainer {
   box-sizing: border-box;
   margin: 0;
@@ -13,6 +16,7 @@
   width: 100%;
   justify-items: center;
 }
+
 
 .leftContainer {
   display: flex;
@@ -51,7 +55,7 @@
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
   border-bottom: 2px solid rgb(83, 83, 83);
-  border-right: 2px solid rgb(83, 83, 83);
+  border-right: 2px solid rgb(117, 93, 93);
   border-top: 2px solid rgb(83, 83, 83);
 }
 
@@ -139,4 +143,19 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .bodyContainer {
+    height: 100%;
+    width: 70%;
+
+  }
+  
+  .logoImage {
+    height: -200%;
+    width: -1000%;
+
+}
+  
 }

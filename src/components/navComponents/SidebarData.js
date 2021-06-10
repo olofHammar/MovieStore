@@ -21,9 +21,11 @@ export const SidebarData = [
   },
 
   {
+
     title: "Family",
     path: "/family",
     icon: <FaIcons.FaUsers />,
+
   },
 
   {
@@ -33,6 +35,7 @@ export const SidebarData = [
   },
 
   {
+
     title: "My Orders ",
     path: "/myOrders",
     icon: <FaIcons.FaReceipt />,
@@ -43,3 +46,4 @@ export const SidebarData = [
     icon: <FaIcons.FaCartPlus />,
   },
 ]
+

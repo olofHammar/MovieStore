@@ -34,7 +34,6 @@ function MyOrders() {
     <div className="myOrdersContainer">
       {userId === null ? (
         <>
-          <div className="myOrdersTitleContainer">My Orders</div>
           <h4 className="myOrdersNoUserMessage">
             Sign in to access this feature.
           </h4>
